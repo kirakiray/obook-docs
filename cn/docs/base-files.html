@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>基础文件</title>
+    <script src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.14/dist/ofa.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.14/libs/scsr/scsr.mjs"
+      type="module"
+    ></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/obook@2.1.3/statics/css/public.css" />
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+    </style>
+    <script>
+      let configUrl = "../config.json";
+    </script>
+    
+  </head>
+  <body>
+    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.3/statics/comps/doc-container.html"></l-m>
+    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.3/statics/comps/doc-header/doc-header.html"></l-m>
+    <o-app src="https://cdn.jsdelivr.net/npm/obook@2.1.3/statics/app-config.mjs">
+      <template page>
+        <style>
+          .markdown-body::before,
+          .markdown-body::after {
+            display: block;
+            content: "";
+            height: 1px;
+          }
+          .markdown-body::after {
+            height: 32px;
+          }
+        </style>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/obook@2.1.3/statics/css/github-markdown.css"
+        />
+        <article class="markdown-body"><h1>基础文件</h1>
+<p>基础文件相当于 <code>o-book</code> 启动的脚手架，需要有这层基底才能进行项目的预览和打包。它们与你的 Markdown 网站间接相关，打包后的文件不会包含这些基础文件。如果你不是开发人员，或者不关心脚手架的细节，也可以跳过这章，直接查看<a href="./project-docs.html">项目文件</a>。</p>
+<p><code>o-book</code> 最主要的基础文件有两个，分别是 <code>sw.js</code> 和 <code>_preview.html</code>。</p>
+<h3>sw.js</h3>
+<p><code>sw.js</code> 是基础文件之一，只有一行代码，内容是引用官方文件进行初始化，不需要过多关注：</p>
+<pre><code class="language-javascript">// sw.js
+importScripts(`https://cdn.jsdelivr.net/npm/obook@2.1.3/src/sw/base.js`);
+</code></pre>
+<h3>_preview.html</h3>
+<p><code>_preview.html</code> 是项目启动预览初始化的文件，主要的代码如下：</p>
+<pre><code class="language-html">&lt;!-- 通过 l-m 加载了 book-tool 组件 --&gt;
+&lt;l-m src=&quot;https://cdn.jsdelivr.net/npm/obook@2.1.0/src/book-tool.html&quot;&gt;&lt;/l-m&gt;
+&lt;!-- 通过 sw 属性引用上面提到的 sw.js 文件，如果 sw.js 更换了命名，这里就需要对应着更换 --&gt;
+&lt;book-tool sw=&quot;./sw.js&quot;&gt;
+    &lt;!-- 引用到你的项目配置文件 --&gt;
+    &lt;source src=&quot;./en/config.json&quot; lang=&quot;en&quot; /&gt;
+    &lt;source src=&quot;./cn/config.json&quot; lang=&quot;cn&quot; /&gt;
+&lt;/book-tool&gt;
+</code></pre>
+<p>其中，<code>source</code> 引用地址到<strong>项目配置文件</strong>处，<strong>项目文件</strong>将在下一章讨论。<code>lang</code> 属性用于设置文档站默认使用的语言。<code>obook</code> 默认支持多语言，如果不需要多语言支持，只保留一个 <code>source</code> 即可。</p>
+<p>目前 <code>o-book</code> 官方支持的语言包括：</p>
+<ul>
+<li><strong>en</strong> 英语</li>
+<li><strong>cn</strong> 简体中文</li>
+<li><strong>t-cn</strong> 繁体中文</li>
+<li><strong>es</strong> 西班牙语</li>
+</ul>
+
+  <article-footer></article-footer>
+  </article>
+        <script>
+          export const parent = "https://cdn.jsdelivr.net/npm/obook@2.1.3/statics/layouts/article-layout.html";
+
+          import pageInit from "https://cdn.jsdelivr.net/npm/obook@2.1.3/statics/page-init.mjs";
+
+          export default async (...args) => {
+            return await pageInit(PATH, args);
+          };
+        </script>
+      </template>
+    </o-app>
+    <div id="loading"></div>
+    <script src="https://cdn.jsdelivr.net/npm/obook@2.1.3/statics/init.js" type="module"></script>
+  </body>
+</html>
