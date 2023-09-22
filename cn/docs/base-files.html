@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>基础文件</title>
-    <script src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.14/dist/ofa.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.15/dist/ofa.min.js"></script>
     <script
-      src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.14/libs/scsr/scsr.mjs"
+      src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.15/libs/scsr/scsr.mjs"
       type="module"
     ></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/obook@2.1.6/statics/css/public.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/obook@2.1.7/statics/css/public.css" />
     <style>
       html,
       body {
@@ -34,9 +34,9 @@
       
   </head>
   <body>
-    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.6/statics/comps/doc-container.html"></l-m>
-    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.6/statics/comps/doc-header/doc-header.html"></l-m>
-    <o-app src="https://cdn.jsdelivr.net/npm/obook@2.1.6/statics/app-config.mjs">
+    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.7/statics/comps/doc-container.html"></l-m>
+    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.7/statics/comps/doc-header/doc-header.html"></l-m>
+    <o-app src="https://cdn.jsdelivr.net/npm/obook@2.1.7/statics/app-config.mjs">
       <template page>
         <style>
           .markdown-body::before,
@@ -51,7 +51,7 @@
         </style>
         <link
           rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/obook@2.1.6/statics/css/github-markdown.css"
+          href="https://cdn.jsdelivr.net/npm/obook@2.1.7/statics/css/github-markdown.css"
         />
         <article class="markdown-body"><h1>基础文件</h1>
 <p>基础文件相当于 <code>o-book</code> 启动的脚手架，需要有这层基底才能进行项目的预览和打包。它们与你的 Markdown 网站间接相关，打包后的文件不会包含这些基础文件。如果你不是开发人员，或者不关心脚手架的细节，也可以跳过这章，直接查看<a href="./project-docs.html">项目文件</a>。</p>
@@ -59,7 +59,7 @@
 <h3>sw.js</h3>
 <p><code>sw.js</code> 是基础文件之一，只有一行代码，内容是引用官方文件进行初始化，不需要过多关注：</p>
 <pre><code class="language-javascript">// sw.js
-importScripts(`https://cdn.jsdelivr.net/npm/obook@2.1.6/src/sw/base.js`);
+importScripts(`https://cdn.jsdelivr.net/npm/obook@2.1.7/src/sw/base.js`);
 </code></pre>
 <h3>_preview.html</h3>
 <p><code>_preview.html</code> 是项目启动预览初始化的文件，主要的代码如下：</p>
@@ -84,9 +84,9 @@ importScripts(`https://cdn.jsdelivr.net/npm/obook@2.1.6/src/sw/base.js`);
     <article-footer></article-footer>
     </article>
         <script>
-          export const parent = "https://cdn.jsdelivr.net/npm/obook@2.1.6/statics/layouts/article-layout.html";
+          export const parent = "https://cdn.jsdelivr.net/npm/obook@2.1.7/statics/layouts/article-layout.html";
 
-          import pageInit from "https://cdn.jsdelivr.net/npm/obook@2.1.6/statics/document-page-init.mjs";
+          import pageInit from "https://cdn.jsdelivr.net/npm/obook@2.1.7/statics/document-page-init.mjs";
 
           export default async (...args) => {
             return await pageInit(PATH, args);
@@ -95,6 +95,6 @@ importScripts(`https://cdn.jsdelivr.net/npm/obook@2.1.6/src/sw/base.js`);
       </template>
     </o-app>
     <div id="loading"></div>
-    <script src="https://cdn.jsdelivr.net/npm/obook@2.1.6/statics/init.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/obook@2.1.7/statics/init.js" type="module"></script>
   </body>
 </html>

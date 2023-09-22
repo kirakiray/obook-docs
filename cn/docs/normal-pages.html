@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>标准模式</title>
+    <title>添加非文档页面</title>
     <script src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.15/dist/ofa.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.15/libs/scsr/scsr.mjs"
@@ -17,7 +17,7 @@
       }
     </style>
     <script>
-      let configUrl = "../../config.json";
+      let configUrl = "../config.json";
     </script>
     
         <!-- Google tag (gtag.js) -->
@@ -53,22 +53,17 @@
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/obook@2.1.7/statics/css/github-markdown.css"
         />
-        <article class="markdown-body"><h1>标准模式</h1>
-<p>标准模式就是使用本地的静态服务器，打开准备好的 <code>_preview.html</code> 文件。如果你使用我们推荐的VSCode 编辑器，那么这个步骤非常简单：</p>
-<ol>
-<li><p>打开 <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer">LiveServer</a> 扩展页面，点击安装，然后会自动打开VSCode并进行扩展安装。</p>
-</li>
-<li><p>将下载的项目解压缩，使用 VSCode 打开该文件夹。</p>
-</li>
-<li><p>在VSCode内，右键根目录下的 <code>_preview.html</code> 文件，选择 <code>open with live server</code>。等待页面初始化完成后，就能点击页面上的链接进行预览。</p>
-</li>
-</ol>
-<p><code>_preview.html</code> 文件就是预览项目的启动器。你也可以不使用 LiveServer，使用其他能够启动静态服务器的扩展。</p>
-<p>这种使用VSCode打开方式的成本最低，编辑器内可以快速启动静态服务器。当然，你也可以使用其他的 Markdown 编辑器，如 Typora，开发工具如 Eclipse，甚至是你系统自带的文本编辑器，只要你觉得方便即可。</p>
-<p>至于静态服务器，你可以使用本地搭建的服务器，如 Nginx、Apache 等，只要它能够用来访问静态 HTML 文件就可以。</p>
-<h2>如何打包</h2>
-<p>同上，在服务器模式下打开 <code>_preview.html</code>，点击 <code>下载网站</code> 就能得到打包好的静态文件；</p>
-<p>接下来，你可以直接进入<a href="../base-files.html">基础文件</a>章节查看更多信息。</p>
+        <article class="markdown-body"><h1>添加非文档页面</h1>
+<p>有时候，您可能需要添加一些不是文档类型的页面，比如首页。在这种情况下，您可以通过编辑 <code>config.json</code> 文件的 <code>pages</code> 属性来指定非文档类型的 Markdown 文件的相对地址。</p>
+<pre><code class="language-json">// config.json
+{
+  ...
+  &quot;pages&quot;: [&quot;./index.md&quot;],
+  ...
+}
+</code></pre>
+<p>在上述示例中，我们设置了一个首页（<code>index.md</code>），这意味着首页将只包含顶部导航组件，而不会显示文档类型页面的左侧文档导航和右侧文章导航。</p>
+<p>这种方式让您可以轻松地添加其他类型的页面，并根据需要进行自定义，而不受文档页面结构的限制。</p>
 
     <article-footer></article-footer>
     </article>
