@@ -9,7 +9,7 @@
       src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.14/libs/scsr/scsr.mjs"
       type="module"
     ></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/obook@2.1.3/statics/css/public.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/obook@2.1.6/statics/css/public.css" />
     <style>
       html,
       body {
@@ -22,9 +22,9 @@
     
   </head>
   <body>
-    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.3/statics/comps/doc-container.html"></l-m>
-    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.3/statics/comps/doc-header/doc-header.html"></l-m>
-    <o-app src="https://cdn.jsdelivr.net/npm/obook@2.1.3/statics/app-config.mjs">
+    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.6/statics/comps/doc-container.html"></l-m>
+    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.6/statics/comps/doc-header/doc-header.html"></l-m>
+    <o-app src="https://cdn.jsdelivr.net/npm/obook@2.1.6/statics/app-config.mjs">
       <template page>
         <style>
           .markdown-body::before,
@@ -39,7 +39,7 @@
         </style>
         <link
           rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/obook@2.1.3/statics/css/github-markdown.css"
+          href="https://cdn.jsdelivr.net/npm/obook@2.1.6/statics/css/github-markdown.css"
         />
         <article class="markdown-body"><h1>标准模式</h1>
 <p>标准模式就是使用本地的静态服务器，打开准备好的 <code>_preview.html</code> 文件。如果你使用我们推荐的VSCode 编辑器，那么这个步骤非常简单：</p>
@@ -56,12 +56,12 @@
 <p>至于静态服务器，你可以使用本地搭建的服务器，如 Nginx、Apache 等，只要它能够用来访问静态 HTML 文件就可以。</p>
 <p>接下来，你可以直接进入<a href="../base-files.html">基础文件</a>章节查看更多信息。</p>
 
-  <article-footer></article-footer>
-  </article>
+    <article-footer></article-footer>
+    </article>
         <script>
-          export const parent = "https://cdn.jsdelivr.net/npm/obook@2.1.3/statics/layouts/article-layout.html";
+          export const parent = "https://cdn.jsdelivr.net/npm/obook@2.1.6/statics/layouts/article-layout.html";
 
-          import pageInit from "https://cdn.jsdelivr.net/npm/obook@2.1.3/statics/page-init.mjs";
+          import pageInit from "https://cdn.jsdelivr.net/npm/obook@2.1.6/statics/document-page-init.mjs";
 
           export default async (...args) => {
             return await pageInit(PATH, args);
@@ -70,6 +70,6 @@
       </template>
     </o-app>
     <div id="loading"></div>
-    <script src="https://cdn.jsdelivr.net/npm/obook@2.1.3/statics/init.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/obook@2.1.6/statics/init.js" type="module"></script>
   </body>
 </html>

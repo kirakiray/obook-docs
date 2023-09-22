@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>网页应用模式</title>
+    <title>obook：最简单的文档建站工具</title>
     <script src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.14/dist/ofa.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.14/libs/scsr/scsr.mjs"
@@ -17,7 +17,7 @@
       }
     </style>
     <script>
-      let configUrl = "../../config.json";
+      let configUrl = "config.json";
     </script>
     
   </head>
@@ -41,23 +41,52 @@
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/obook@2.1.6/statics/css/github-markdown.css"
         />
-        <article class="markdown-body"><h1>网页应用模式</h1>
-<p>这种方式是 obook 最低成本的使用方式，以下是使用步骤：</p>
-<ol>
-<li><p>使用最新版的 Chrome 浏览器（或支持 File Access API 的其他浏览器），打开 <a href="https://kirakiray.github.io/o-book/webapp/">obook webapp</a></p>
-</li>
-<li><p>在网页上点击 &quot;选择本地文件夹&quot; 按钮，以打开你本地的项目文件夹；</p>
-</li>
-</ol>
-<p>现在，你可以点击链接进行预览，并且可以在页面上点击 &quot;下载网站&quot; 按钮来下载已经打包好的文档站。</p>
-<p>这种方式非常简便，适合不需要复杂设置和开发知识的用户。</p>
+        <p><l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.6/blocks/simp-block.html"></l-m></p>
+<simp-block>
 
-    <article-footer></article-footer>
-    </article>
+<img src="../publics/logo.svg" class="logo" />
+
+<h2>obook是什么？</h2>
+<h3>如果您想专注于写文档，同时希望快速创建免费且精美的网站，那么obook就是您的不二选择</h3>
+<p><a href="./docs/index.html">使用文档</a></p>
+</simp-block>
+
+<simp-block>
+
+<h2>极度简单</h2>
+<h3>你甚至可以不看文档，使用我们的Web应用程序，也能轻松起步</h3>
+<p><a href="https://kirakiray.github.io/o-book/webapp/">obook previewer</a></p>
+</simp-block>
+
+<simp-block>
+
+<h2>完全免费</h2>
+<h3>生成的是静态网站，可以将其托管在GitHub Pages上，无需购买服务器</h3>
+</simp-block>
+
+<simp-block>
+
+<h2>功能强大</h2>
+<h3>兼容移动端，包含白天黑夜模式；打包好的文档站，具备完整的搜索功能</h3>
+<p>使用其他文档站生成器，可能需要购买搜索微服务</p>
+</simp-block>
+
+<simp-block>
+
+<h2>多语言支持</h2>
+<h3>网站原生组件提供多语言支持</h3>
+<p>目前支持<strong>英语</strong>，<strong>简体中文</strong>，<strong>繁体中文</strong>，<strong>西班牙语</strong></p>
+</simp-block>
+
+<simp-block>
+
+<h2>案例</h2>
+<p>当前站点就是案例</p>
+</simp-block>
         <script>
-          export const parent = "https://cdn.jsdelivr.net/npm/obook@2.1.6/statics/layouts/article-layout.html";
+          export const parent = "https://cdn.jsdelivr.net/npm/obook@2.1.6/statics/layouts/header-layout.html";
 
-          import pageInit from "https://cdn.jsdelivr.net/npm/obook@2.1.6/statics/document-page-init.mjs";
+          import pageInit from "https://cdn.jsdelivr.net/npm/obook@2.1.6/statics/page-init.mjs";
 
           export default async (...args) => {
             return await pageInit(PATH, args);
