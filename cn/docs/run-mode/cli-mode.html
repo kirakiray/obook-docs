@@ -20,6 +20,18 @@
       let configUrl = "../../config.json";
     </script>
     
+        <!-- Google tag (gtag.js) -->
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-8YBSTGPGF8"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag("js", new Date());
+
+          gtag("config", "G-8YBSTGPGF8");
+        </script>
+      
   </head>
   <body>
     <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.6/statics/comps/doc-container.html"></l-m>
@@ -60,8 +72,10 @@
 }
 </code></pre>
 <ol start="4">
-<li>在终端中切换到当前项目目录，使用 <code>obook dev</code> 命令进行实时预览，使用 <code>obook build</code> 命令将项目打包到 <code>dist</code> 目录。</li>
+<li>在终端中切换到当前项目目录，使用 <code>obook dev</code> 命令进行实时预览，</li>
 </ol>
+<h2>如何打包</h2>
+<p>同上模式下，使用 <code>obook build</code> 命令将项目打包到 <code>package.json</code> 上定义的 <code>dist</code> 目录。</p>
 <p>接下来，你可以直接进入<a href="../base-files.html">基础文件</a>章节查看更多信息。</p>
 
     <article-footer></article-footer>

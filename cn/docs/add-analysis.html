@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>项目文件</title>
+    <title>添加分析代码</title>
     <script src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.14/dist/ofa.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.14/libs/scsr/scsr.mjs"
@@ -53,45 +53,31 @@
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/obook@2.1.6/statics/css/github-markdown.css"
         />
-        <article class="markdown-body"><h1>项目文件</h1>
-<p>项目文件是你真正写文档的文件，项目目录结构大致如下：</p>
-<ul>
-<li><strong>config.json</strong></li>
-<li>docs<ul>
-<li><strong>SUMMARY.md</strong></li>
-<li><em>article1.md</em></li>
-<li><em>article2.md</em></li>
-</ul>
+        <article class="markdown-body"><h1>添加分析代码</h1>
+<p>如果您需要跟踪和统计您网站的访问数据，我们建议您使用 <a href="https://analytics.google.com">谷歌分析</a>。</p>
+<p>要添加分析代码，请按照以下步骤操作：</p>
+<ol>
+<li><p>使用您的代码编辑器打开 <code>_preview.html</code> 文件。</p>
 </li>
-</ul>
-<p>在这个结构中，<code>.md</code> 文件是你实际编写文档内容的文件，你只需要按照 Markdown 的格式编写文档即可。</p>
-<h2>config.json</h2>
-<p><code>config.json</code> 是文档站的配置文件，用于配置顶部的导航以及其他设置。<code>navs</code> 属性用于配置导航栏，其中 <code>summary</code> 属性对应下面提到的 <code>SUMMARY.md</code> 文件路径。你可以配置多个导航选项。</p>
-<pre><code class="language-json">{
-  &quot;navs&quot;: [
-    {
-      &quot;name&quot;: &quot;使用文档&quot;,
-      &quot;summary&quot;: &quot;./docs/SUMMARY.md&quot;
-    },
-    // {
-    //   &quot;name&quot;: &quot;导航名&quot;,
-    //   &quot;summary&quot;: &quot;./folder/SUMMARY.md&quot;
-    // }
-  ]
-}
+<li><p>在 <code>&lt;book-tool&gt;</code> 标签中添加一个带有 <code>inject-head</code> 属性的 <code>&lt;template&gt;</code> 标签，并将您的统计代码放置在模板内，类似如下所示：</p>
+</li>
+</ol>
+<pre><code class="language-html">&lt;book-tool sw=&quot;./doc-sw.js&quot;&gt;
+   &lt;source src=&quot;./cn/config.json&quot; lang=&quot;cn&quot; /&gt;
+   &lt;template inject-head&gt;
+        &lt;!-- Google tag (gtag.js) --&gt;
+        &lt;script async src=&quot;https://www.googletagmanager.com/gtag/js?id=G-xxxxxxxxxx&quot;&gt;&lt;/script&gt;
+        &lt;script&gt;
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag(&#39;js&#39;, new Date());
+
+        gtag(&#39;config&#39;, &#39;G-xxxxxxxxxx&#39;);
+        &lt;/script&gt;
+   &lt;/template&gt;
+&lt;/book-tool&gt;
 </code></pre>
-<h2>SUMMARY.md</h2>
-<p>SUMMARY.md 的格式是一个简单的链接列表，链接的名字是章节的名字，链接的指向是章节文件的路径，会在文档站的左侧展示。</p>
-<p>例如当前文档站的 <code>SUMMARY.md</code> 信息如下：</p>
-<pre><code class="language-md">- [介绍](./index.md)
-- 启动项目
-  - [标准模式](./run-mode/base-mode.md)
-  - [命令行模式](./run-mode/cli-mode.md)
-  - [网页应用模式](./run-mode/webapp-mode.md)
-- [基础文件](./base-files.md)
-- [项目文件](./project-docs.md)
-</code></pre>
-<p>这些项目文件是构建文档站的关键部分，它们将帮助你组织和展示你的文档内容。请按照以上结构和格式编写你的文档。</p>
+<p>一旦您添加了分析代码，请重新打包项目。分析代码会插入到所有页面的头部，以便您可以轻松跟踪和分析您网站的访问数据。</p>
 
     <article-footer></article-footer>
     </article>

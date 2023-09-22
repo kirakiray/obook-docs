@@ -20,6 +20,18 @@
       let configUrl = "../../config.json";
     </script>
     
+        <!-- Google tag (gtag.js) -->
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-8YBSTGPGF8"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag("js", new Date());
+
+          gtag("config", "G-8YBSTGPGF8");
+        </script>
+      
   </head>
   <body>
     <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.6/statics/comps/doc-container.html"></l-m>
@@ -54,6 +66,8 @@
 <p><code>_preview.html</code> 文件就是预览项目的启动器。你也可以不使用 LiveServer，使用其他能够启动静态服务器的扩展。</p>
 <p>这种使用VSCode打开方式的成本最低，编辑器内可以快速启动静态服务器。当然，你也可以使用其他的 Markdown 编辑器，如 Typora，开发工具如 Eclipse，甚至是你系统自带的文本编辑器，只要你觉得方便即可。</p>
 <p>至于静态服务器，你可以使用本地搭建的服务器，如 Nginx、Apache 等，只要它能够用来访问静态 HTML 文件就可以。</p>
+<h2>如何打包</h2>
+<p>同上，在服务器模式下打开 <code>_preview.html</code>，点击 <code>下载网站</code> 就能得到打包好的静态文件；</p>
 <p>接下来，你可以直接进入<a href="../base-files.html">基础文件</a>章节查看更多信息。</p>
 
     <article-footer></article-footer>
