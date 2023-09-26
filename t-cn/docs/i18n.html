@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>命令行模式</title>
+    <title>多語言支持</title>
     <script src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.16/dist/ofa.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.16/libs/scsr/scsr.mjs"
@@ -17,7 +17,7 @@
       }
     </style>
     <script>
-      let configUrl = "../../config.json";
+      let configUrl = "../config.json";
     </script>
     
         <!-- Google tag (gtag.js) -->
@@ -54,30 +54,24 @@
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/obook@2.1.12/statics/css/github-markdown.css"
         />
-        <article class="markdown-body"><h1>命令行模式</h1>
-<p>命令行模式是通过使用 <code>obook</code> 命令来启动你的项目，需要具备一定的开发知识基础。以下是使用流程：</p>
-<ol>
-<li><p>确保系统已经安装了 <code>Node.js</code>，并确保版本大于等于 18。</p>
-</li>
-<li><p>在命令行中使用 <code>npm i obook -g</code> 命令将 <code>o-book</code> 安装到你的本机。</p>
-</li>
-<li><p>下载下来的项目文件后，确保项目根目录下的 <code>package.json</code> 文件已经配置了 <code>obook</code> 属性，如下所示：</p>
-</li>
-</ol>
-<pre><code class="language-json">{
-  &quot;obook&quot;: {
-    &quot;input&quot;: &quot;./_preview.html&quot;, // 项目组件预览页的地址
-    &quot;output&quot;: &quot;./dist&quot;, // 打包输出目录
-    &quot;port&quot;: 44038  // 预览网页的端口号，请确保端口号不会与其他服务冲突
-  }
-}
+        <article class="markdown-body"><h1>多語言支持</h1>
+<p>您可以通過修改 <code>_preview.html</code> 文件中的 <code>book-tool</code> 組件，在內部添加 <code>source</code> 標簽來增加其他語言的文檔。請注意，其他語言的文檔必須要與原文內容一一對應。</p>
+<pre><code class="language-html">&lt;book-tool sw=&quot;./sw.js&quot;&gt;
+    &lt;!-- 引用到你的項目配置文件 --&gt;
+    &lt;source src=&quot;./en/config.json&quot; lang=&quot;en&quot; /&gt;
+    &lt;source src=&quot;./cn/config.json&quot; lang=&quot;cn&quot; /&gt;
+    &lt;source src=&quot;./t-cn/config.json&quot; lang=&quot;t-cn&quot; /&gt;
+    &lt;source src=&quot;./es/config.json&quot; lang=&quot;es&quot; /&gt;
+&lt;/book-tool&gt;
 </code></pre>
-<ol start="4">
-<li>在终端中切换到当前项目目录，使用 <code>obook dev</code> 命令进行实时预览，</li>
-</ol>
-<h2>如何打包</h2>
-<p>同上模式下，使用 <code>obook build</code> 命令将项目打包到 <code>package.json</code> 上定义的 <code>dist</code> 目录。</p>
-<p>接下来，你可以直接进入<a href="../base-files.html">基础文件</a>章节查看更多信息。</p>
+<p>在上述代碼中，我們使用了 <code>source</code> 標簽來引入不同語言版本的文檔配置文件。同時，<code>lang</code> 屬性用於指定文檔所使用的語言。目前支持的語言選項如下：</p>
+<ul>
+<li>英語 (en)</li>
+<li>簡體中文 (cn)</li>
+<li>繁體中文 (t-cn)</li>
+<li>西班牙語 (es)</li>
+</ul>
+<p>通過這種方式，您可以輕松為不同語言的用戶提供相應語言版本的網站內容；</p>
 
     <article-footer></article-footer>
     </article>

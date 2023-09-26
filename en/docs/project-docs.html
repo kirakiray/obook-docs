@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>命令行模式</title>
+    <title>Project Files</title>
     <script src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.16/dist/ofa.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.16/libs/scsr/scsr.mjs"
@@ -17,7 +17,7 @@
       }
     </style>
     <script>
-      let configUrl = "../../config.json";
+      let configUrl = "../config.json";
     </script>
     
         <!-- Google tag (gtag.js) -->
@@ -54,30 +54,45 @@
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/obook@2.1.12/statics/css/github-markdown.css"
         />
-        <article class="markdown-body"><h1>命令行模式</h1>
-<p>命令行模式是通过使用 <code>obook</code> 命令来启动你的项目，需要具备一定的开发知识基础。以下是使用流程：</p>
-<ol>
-<li><p>确保系统已经安装了 <code>Node.js</code>，并确保版本大于等于 18。</p>
+        <article class="markdown-body"><h1>Project Files</h1>
+<p>The project files are the files where you actually write documents. The project directory structure is roughly as follows:</p>
+<ul>
+<li><strong>config.json</strong></li>
+<li>docs<ul>
+<li><strong>SUMMARY.md</strong></li>
+<li><em>article1.md</em></li>
+<li><em>article2.md</em></li>
+</ul>
 </li>
-<li><p>在命令行中使用 <code>npm i obook -g</code> 命令将 <code>o-book</code> 安装到你的本机。</p>
-</li>
-<li><p>下载下来的项目文件后，确保项目根目录下的 <code>package.json</code> 文件已经配置了 <code>obook</code> 属性，如下所示：</p>
-</li>
-</ol>
+</ul>
+<p>In this structure, the <code>.md</code> file is the file where you actually write the content of the document, and you just need to write the document in Markdown format.</p>
+<h2>config.json</h2>
+<p><code>config.json</code> is the configuration file for the document site, used to configure the top navigation and other settings. The <code>navs</code> attribute is used to configure the navigation bar, and the <code>summary</code> attribute corresponds to the <code>SUMMARY.md</code> file path mentioned below. You can configure multiple navigation options.</p>
 <pre><code class="language-json">{
-  &quot;obook&quot;: {
-    &quot;input&quot;: &quot;./_preview.html&quot;, // 项目组件预览页的地址
-    &quot;output&quot;: &quot;./dist&quot;, // 打包输出目录
-    &quot;port&quot;: 44038  // 预览网页的端口号，请确保端口号不会与其他服务冲突
-  }
+  &quot;navs&quot;: [
+    {
+      &quot;name&quot;: &quot;使用文档&quot;,
+      &quot;summary&quot;: &quot;./docs/SUMMARY.md&quot;
+    },
+    // {
+    //   &quot;name&quot;: &quot;导航名&quot;,
+    //   &quot;summary&quot;: &quot;./folder/SUMMARY.md&quot;
+    // }
+  ]
 }
 </code></pre>
-<ol start="4">
-<li>在终端中切换到当前项目目录，使用 <code>obook dev</code> 命令进行实时预览，</li>
-</ol>
-<h2>如何打包</h2>
-<p>同上模式下，使用 <code>obook build</code> 命令将项目打包到 <code>package.json</code> 上定义的 <code>dist</code> 目录。</p>
-<p>接下来，你可以直接进入<a href="../base-files.html">基础文件</a>章节查看更多信息。</p>
+<h2>SUMMARY.md</h2>
+<p>The format of SUMMARY.md is a simple list of links. The name of the link is the name of the chapter, and the target of the link is the path of the chapter file, which will be displayed on the left side of the documentation site.</p>
+<p>For example, the information of the <code>SUMMARY.md</code> file of the current document site is as follows:</p>
+<pre><code class="language-md">- [Introduction](./index.md)
+- Start the Project
+  - [Standard Mode](./run-mode/base-mode.md)
+  - [Command Line Mode](./run-mode/cli-mode.md)
+  - [Web Application Mode](./run-mode/webapp-mode.md)
+- [Base Files](./base-files.md)
+- [Project Documentation](./project-docs.md)
+</code></pre>
+<p>These project files are crucial to building a documentation site, as they will help you organize and showcase your document content. Please write your document following the above structure and format.</p>
 
     <article-footer></article-footer>
     </article>

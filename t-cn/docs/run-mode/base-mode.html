@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>命令行模式</title>
+    <title>標準模式</title>
     <script src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.16/dist/ofa.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.16/libs/scsr/scsr.mjs"
@@ -54,30 +54,22 @@
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/obook@2.1.12/statics/css/github-markdown.css"
         />
-        <article class="markdown-body"><h1>命令行模式</h1>
-<p>命令行模式是通过使用 <code>obook</code> 命令来启动你的项目，需要具备一定的开发知识基础。以下是使用流程：</p>
+        <article class="markdown-body"><h1>標準模式</h1>
+<p>標準模式就是使用本地的靜態服務器，打開準備好的 <code>_preview.html</code> 文件。如果你使用我們推薦的VSCode 編輯器，那麽這個步驟非常簡單：</p>
 <ol>
-<li><p>确保系统已经安装了 <code>Node.js</code>，并确保版本大于等于 18。</p>
+<li><p>打開 <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer">LiveServer</a> 擴展頁面，點擊安裝，然後會自動打開VSCode並進行擴展安裝。</p>
 </li>
-<li><p>在命令行中使用 <code>npm i obook -g</code> 命令将 <code>o-book</code> 安装到你的本机。</p>
+<li><p>將下載的項目解壓縮，使用 VSCode 打開該文件夾。</p>
 </li>
-<li><p>下载下来的项目文件后，确保项目根目录下的 <code>package.json</code> 文件已经配置了 <code>obook</code> 属性，如下所示：</p>
+<li><p>在VSCode內，右鍵根目錄下的 <code>_preview.html</code> 文件，選擇 <code>open with live server</code>。等待頁面初始化完成後，就能點擊頁面上的鏈接進行預覽。</p>
 </li>
 </ol>
-<pre><code class="language-json">{
-  &quot;obook&quot;: {
-    &quot;input&quot;: &quot;./_preview.html&quot;, // 项目组件预览页的地址
-    &quot;output&quot;: &quot;./dist&quot;, // 打包输出目录
-    &quot;port&quot;: 44038  // 预览网页的端口号，请确保端口号不会与其他服务冲突
-  }
-}
-</code></pre>
-<ol start="4">
-<li>在终端中切换到当前项目目录，使用 <code>obook dev</code> 命令进行实时预览，</li>
-</ol>
+<p><code>_preview.html</code> 文件就是預覽項目的啟動器。你也可以不使用 LiveServer，使用其他能夠啟動靜態服務器的擴展。</p>
+<p>這種使用VSCode打開方式的成本最低，編輯器內可以快速啟動靜態服務器。當然，你也可以使用其他的 Markdown 編輯器，如 Typora，開發工具如 Eclipse，甚至是你系統自帶的文本編輯器，只要你覺得方便即可。</p>
+<p>至於靜態服務器，你可以使用本地搭建的服務器，如 Nginx、Apache 等，只要它能夠用來訪問靜態 HTML 文件就可以。</p>
 <h2>如何打包</h2>
-<p>同上模式下，使用 <code>obook build</code> 命令将项目打包到 <code>package.json</code> 上定义的 <code>dist</code> 目录。</p>
-<p>接下来，你可以直接进入<a href="../base-files.html">基础文件</a>章节查看更多信息。</p>
+<p>同上，在服務器模式下打開 <code>_preview.html</code>，點擊 <code>下載網站</code> 就能得到打包好的靜態文件；</p>
+<p>接下來，你可以直接進入<a href="../base-files.html">基礎文件</a>章節查看更多信息。</p>
 
     <article-footer></article-footer>
     </article>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>命令行模式</title>
+    <title>基礎文件</title>
     <script src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.16/dist/ofa.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.16/libs/scsr/scsr.mjs"
@@ -17,7 +17,7 @@
       }
     </style>
     <script>
-      let configUrl = "../../config.json";
+      let configUrl = "../config.json";
     </script>
     
         <!-- Google tag (gtag.js) -->
@@ -54,30 +54,33 @@
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/obook@2.1.12/statics/css/github-markdown.css"
         />
-        <article class="markdown-body"><h1>命令行模式</h1>
-<p>命令行模式是通过使用 <code>obook</code> 命令来启动你的项目，需要具备一定的开发知识基础。以下是使用流程：</p>
-<ol>
-<li><p>确保系统已经安装了 <code>Node.js</code>，并确保版本大于等于 18。</p>
-</li>
-<li><p>在命令行中使用 <code>npm i obook -g</code> 命令将 <code>o-book</code> 安装到你的本机。</p>
-</li>
-<li><p>下载下来的项目文件后，确保项目根目录下的 <code>package.json</code> 文件已经配置了 <code>obook</code> 属性，如下所示：</p>
-</li>
-</ol>
-<pre><code class="language-json">{
-  &quot;obook&quot;: {
-    &quot;input&quot;: &quot;./_preview.html&quot;, // 项目组件预览页的地址
-    &quot;output&quot;: &quot;./dist&quot;, // 打包输出目录
-    &quot;port&quot;: 44038  // 预览网页的端口号，请确保端口号不会与其他服务冲突
-  }
-}
+        <article class="markdown-body"><h1>基礎文件</h1>
+<p>基礎文件相當於 <code>o-book</code> 啟動的腳手架，需要有這層基底才能進行項目的預覽和打包。它們與你的 Markdown 網站間接相關，打包後的文件不會包含這些基礎文件。如果你不是開發人員，或者不關心腳手架的細節，也可以跳過這章，直接查看<a href="./project-docs.html">項目文件</a>。</p>
+<p><code>o-book</code> 最主要的基礎文件有兩個，分別是 <code>sw.js</code> 和 <code>_preview.html</code>。</p>
+<h3>sw.js</h3>
+<p><code>sw.js</code> 是基礎文件之一，只有一行代碼，內容是引用官方文件進行初始化，不需要過多關注：</p>
+<pre><code class="language-javascript">// sw.js
+importScripts(`https://cdn.jsdelivr.net/npm/obook@2.1.12/src/sw/base.js`);
 </code></pre>
-<ol start="4">
-<li>在终端中切换到当前项目目录，使用 <code>obook dev</code> 命令进行实时预览，</li>
-</ol>
-<h2>如何打包</h2>
-<p>同上模式下，使用 <code>obook build</code> 命令将项目打包到 <code>package.json</code> 上定义的 <code>dist</code> 目录。</p>
-<p>接下来，你可以直接进入<a href="../base-files.html">基础文件</a>章节查看更多信息。</p>
+<h3>_preview.html</h3>
+<p><code>_preview.html</code> 是項目啟動預覽初始化的文件，主要的代碼如下：</p>
+<pre><code class="language-html">&lt;!-- 通過 l-m 加載了 book-tool 組件 --&gt;
+&lt;l-m src=&quot;https://cdn.jsdelivr.net/npm/obook@2.1.0/src/book-tool.html&quot;&gt;&lt;/l-m&gt;
+&lt;!-- 通過 sw 屬性引用上面提到的 sw.js 文件，如果 sw.js 更換了命名，這裏就需要對應著更換 --&gt;
+&lt;book-tool sw=&quot;./sw.js&quot;&gt;
+    &lt;!-- 引用到你的項目配置文件 --&gt;
+    &lt;source src=&quot;./en/config.json&quot; lang=&quot;en&quot; /&gt;
+    &lt;source src=&quot;./cn/config.json&quot; lang=&quot;cn&quot; /&gt;
+&lt;/book-tool&gt;
+</code></pre>
+<p>其中，<code>source</code> 引用地址到<strong>項目配置文件</strong>處，<strong>項目文件</strong>將在下一章討論。<code>lang</code> 屬性用於設置文檔站默認使用的語言。<code>obook</code> 默認支持多語言，如果不需要多語言支持，只保留一個 <code>source</code> 即可。</p>
+<p>目前 <code>o-book</code> 官方支持的語言包括：</p>
+<ul>
+<li><strong>en</strong> 英語</li>
+<li><strong>cn</strong> 簡體中文</li>
+<li><strong>t-cn</strong> 繁體中文</li>
+<li><strong>es</strong> 西班牙語</li>
+</ul>
 
     <article-footer></article-footer>
     </article>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>命令行模式</title>
+    <title>添加分析代碼</title>
     <script src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.16/dist/ofa.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.16/libs/scsr/scsr.mjs"
@@ -17,7 +17,7 @@
       }
     </style>
     <script>
-      let configUrl = "../../config.json";
+      let configUrl = "../config.json";
     </script>
     
         <!-- Google tag (gtag.js) -->
@@ -54,30 +54,31 @@
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/obook@2.1.12/statics/css/github-markdown.css"
         />
-        <article class="markdown-body"><h1>命令行模式</h1>
-<p>命令行模式是通过使用 <code>obook</code> 命令来启动你的项目，需要具备一定的开发知识基础。以下是使用流程：</p>
+        <article class="markdown-body"><h1>添加分析代碼</h1>
+<p>如果您需要跟蹤和統計您網站的訪問數據，我們建議您使用 <a href="https://analytics.google.com">谷歌分析</a>。</p>
+<p>要添加分析代碼，請按照以下步驟操作：</p>
 <ol>
-<li><p>确保系统已经安装了 <code>Node.js</code>，并确保版本大于等于 18。</p>
+<li><p>使用您的代碼編輯器打開 <code>_preview.html</code> 文件。</p>
 </li>
-<li><p>在命令行中使用 <code>npm i obook -g</code> 命令将 <code>o-book</code> 安装到你的本机。</p>
-</li>
-<li><p>下载下来的项目文件后，确保项目根目录下的 <code>package.json</code> 文件已经配置了 <code>obook</code> 属性，如下所示：</p>
+<li><p>在 <code>&lt;book-tool&gt;</code> 標簽中添加一個帶有 <code>inject-head</code> 屬性的 <code>&lt;template&gt;</code> 標簽，並將您的統計代碼放置在模板內，類似如下所示：</p>
 </li>
 </ol>
-<pre><code class="language-json">{
-  &quot;obook&quot;: {
-    &quot;input&quot;: &quot;./_preview.html&quot;, // 项目组件预览页的地址
-    &quot;output&quot;: &quot;./dist&quot;, // 打包输出目录
-    &quot;port&quot;: 44038  // 预览网页的端口号，请确保端口号不会与其他服务冲突
-  }
-}
+<pre><code class="language-html">&lt;book-tool sw=&quot;./doc-sw.js&quot;&gt;
+   &lt;source src=&quot;./cn/config.json&quot; lang=&quot;cn&quot; /&gt;
+   &lt;template inject-head&gt;
+        &lt;!-- Google tag (gtag.js) --&gt;
+        &lt;script async src=&quot;https://www.googletagmanager.com/gtag/js?id=G-xxxxxxxxxx&quot;&gt;&lt;/script&gt;
+        &lt;script&gt;
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag(&#39;js&#39;, new Date());
+
+        gtag(&#39;config&#39;, &#39;G-xxxxxxxxxx&#39;);
+        &lt;/script&gt;
+   &lt;/template&gt;
+&lt;/book-tool&gt;
 </code></pre>
-<ol start="4">
-<li>在终端中切换到当前项目目录，使用 <code>obook dev</code> 命令进行实时预览，</li>
-</ol>
-<h2>如何打包</h2>
-<p>同上模式下，使用 <code>obook build</code> 命令将项目打包到 <code>package.json</code> 上定义的 <code>dist</code> 目录。</p>
-<p>接下来，你可以直接进入<a href="../base-files.html">基础文件</a>章节查看更多信息。</p>
+<p>一旦您添加了分析代碼，請重新打包項目。分析代碼會插入到所有頁面的頭部，以便您可以輕松跟蹤和分析您網站的訪問數據。</p>
 
     <article-footer></article-footer>
     </article>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>命令行模式</title>
+    <title>obook：最簡單的文檔建站工具</title>
     <script src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.16/dist/ofa.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.16/libs/scsr/scsr.mjs"
@@ -17,7 +17,7 @@
       }
     </style>
     <script>
-      let configUrl = "../../config.json";
+      let configUrl = "config.json";
     </script>
     
         <!-- Google tag (gtag.js) -->
@@ -54,37 +54,54 @@
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/obook@2.1.12/statics/css/github-markdown.css"
         />
-        <article class="markdown-body"><h1>命令行模式</h1>
-<p>命令行模式是通过使用 <code>obook</code> 命令来启动你的项目，需要具备一定的开发知识基础。以下是使用流程：</p>
-<ol>
-<li><p>确保系统已经安装了 <code>Node.js</code>，并确保版本大于等于 18。</p>
-</li>
-<li><p>在命令行中使用 <code>npm i obook -g</code> 命令将 <code>o-book</code> 安装到你的本机。</p>
-</li>
-<li><p>下载下来的项目文件后，确保项目根目录下的 <code>package.json</code> 文件已经配置了 <code>obook</code> 属性，如下所示：</p>
-</li>
-</ol>
-<pre><code class="language-json">{
-  &quot;obook&quot;: {
-    &quot;input&quot;: &quot;./_preview.html&quot;, // 项目组件预览页的地址
-    &quot;output&quot;: &quot;./dist&quot;, // 打包输出目录
-    &quot;port&quot;: 44038  // 预览网页的端口号，请确保端口号不会与其他服务冲突
-  }
-}
-</code></pre>
-<ol start="4">
-<li>在终端中切换到当前项目目录，使用 <code>obook dev</code> 命令进行实时预览，</li>
-</ol>
-<h2>如何打包</h2>
-<p>同上模式下，使用 <code>obook build</code> 命令将项目打包到 <code>package.json</code> 上定义的 <code>dist</code> 目录。</p>
-<p>接下来，你可以直接进入<a href="../base-files.html">基础文件</a>章节查看更多信息。</p>
+        <p><l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.12/blocks/simp-block.html"></l-m></p>
+<simp-block>
 
-    <article-footer></article-footer>
-    </article>
+<img src="../publics/logo.svg" class="logo" />
+
+<h2>obook是什麽？</h2>
+<h3>如果您只想專注於寫文檔，希望快速創建免費且精美的網站，那麽obook就是您的不二選擇</h3>
+<p><a href="./docs/index.html">使用文檔</a></p>
+</simp-block>
+
+<simp-block>
+
+<h2>極度簡單</h2>
+<h3>你甚至可以不看文檔，使用我們的Web應用程序，也能輕松起步</h3>
+<p><a href="https://kirakiray.github.io/o-book/webapp/">obook previewer</a></p>
+</simp-block>
+
+<simp-block>
+
+<h2>完全免費</h2>
+<h3>生成的是靜態網站，可以將其托管在GitHub Pages上，無需購買服務器</h3>
+</simp-block>
+
+<simp-block>
+
+<h2>功能強大</h2>
+<h3>兼容移動端，包含白天黑夜模式；打包好的文檔站，具備完整的搜索功能</h3>
+<p>使用其他文檔站生成器，可能需要購買搜索微服務</p>
+</simp-block>
+
+<simp-block>
+
+<h2>多語言支持</h2>
+<h3>網站原生組件提供多語言支持</h3>
+<p>目前支持<strong>英語</strong>，<strong>簡體中文</strong>，<strong>繁體中文</strong>，<strong>西班牙語</strong></p>
+</simp-block>
+
+<simp-block>
+
+<h2>案例</h2>
+<p>當前站點就是案例</p>
+</simp-block>
+
+
         <script>
-          export const parent = "https://cdn.jsdelivr.net/npm/obook@2.1.12/statics/layouts/article-layout.html";
+          export const parent = "https://cdn.jsdelivr.net/npm/obook@2.1.12/statics/layouts/header-layout.html";
 
-          import pageInit from "https://cdn.jsdelivr.net/npm/obook@2.1.12/statics/document-page-init.mjs";
+          import pageInit from "https://cdn.jsdelivr.net/npm/obook@2.1.12/statics/page-init.mjs";
 
           export default async (...args) => {
             return await pageInit(PATH, args);

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>命令行模式</title>
+    <title>Standard Mode</title>
     <script src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.16/dist/ofa.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.16/libs/scsr/scsr.mjs"
@@ -54,30 +54,22 @@
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/obook@2.1.12/statics/css/github-markdown.css"
         />
-        <article class="markdown-body"><h1>命令行模式</h1>
-<p>命令行模式是通过使用 <code>obook</code> 命令来启动你的项目，需要具备一定的开发知识基础。以下是使用流程：</p>
+        <article class="markdown-body"><h1>Standard Mode</h1>
+<p>Standard mode is to use the local static server and open the prepared <code>_preview.html</code> file. If you are using our recommended VSCode editor, then this step is very simple:</p>
 <ol>
-<li><p>确保系统已经安装了 <code>Node.js</code>，并确保版本大于等于 18。</p>
+<li><p>Open <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer">LiveServer</a> extension page, click install, and it will automatically open VSCode and install the extension.</p>
 </li>
-<li><p>在命令行中使用 <code>npm i obook -g</code> 命令将 <code>o-book</code> 安装到你的本机。</p>
+<li><p>Unzip the downloaded project and open the folder with VSCode.</p>
 </li>
-<li><p>下载下来的项目文件后，确保项目根目录下的 <code>package.json</code> 文件已经配置了 <code>obook</code> 属性，如下所示：</p>
+<li><p>In VSCode, right-click on the <code>_preview.html</code> file in the root directory and select <code>open with live server</code>. After the page initialization is complete, you can click on the links on the page to preview.</p>
 </li>
 </ol>
-<pre><code class="language-json">{
-  &quot;obook&quot;: {
-    &quot;input&quot;: &quot;./_preview.html&quot;, // 项目组件预览页的地址
-    &quot;output&quot;: &quot;./dist&quot;, // 打包输出目录
-    &quot;port&quot;: 44038  // 预览网页的端口号，请确保端口号不会与其他服务冲突
-  }
-}
-</code></pre>
-<ol start="4">
-<li>在终端中切换到当前项目目录，使用 <code>obook dev</code> 命令进行实时预览，</li>
-</ol>
-<h2>如何打包</h2>
-<p>同上模式下，使用 <code>obook build</code> 命令将项目打包到 <code>package.json</code> 上定义的 <code>dist</code> 目录。</p>
-<p>接下来，你可以直接进入<a href="../base-files.html">基础文件</a>章节查看更多信息。</p>
+<p><code>_preview.html</code> file is the launcher for previewing projects. You can also use other extensions that can start a static server instead of LiveServer.</p>
+<p>This method of opening with VSCode has the lowest cost, and the editor can quickly start a static server. Of course, you can also use other Markdown editors, such as Typora, development tools such as Eclipse, or even the text editor that comes with your system, as long as you find it convenient.</p>
+<p>As for static servers, you can use locally built servers, such as Nginx, Apache, etc., as long as they can be used to access static HTML files.</p>
+<h2>How to package</h2>
+<p>Same as above, open <code>_preview.html</code> in server mode, click <code>Download Website</code> to get the packaged static files.</p>
+<p>Next, you can directly access the <a href="../base-files.html">base file</a> section for more information.</p>
 
     <article-footer></article-footer>
     </article>
