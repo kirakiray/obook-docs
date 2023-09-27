@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>obook：最簡單的文檔建站工具</title>
-    <script src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.16/dist/ofa.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.18/dist/ofa.min.js"></script>
     <script
-      src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.16/libs/scsr/scsr.mjs"
+      src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.18/libs/scsr/scsr.mjs"
       type="module"
     ></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/obook@2.1.12/statics/css/public.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/obook@2.1.15/statics/css/public.css" />
     <style>
       html,
       body {
@@ -35,9 +35,9 @@
       
   </head>
   <body>
-    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.12/statics/comps/doc-container.html"></l-m>
-    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.12/statics/comps/doc-header/doc-header.html"></l-m>
-    <o-app src="https://cdn.jsdelivr.net/npm/obook@2.1.12/statics/app-config.mjs">
+    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.15/statics/comps/doc-container.html"></l-m>
+    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.15/statics/comps/doc-header/doc-header.html"></l-m>
+    <o-app src="https://cdn.jsdelivr.net/npm/obook@2.1.15/statics/app-config.mjs">
       <template page>
         <style>
           .markdown-body::before,
@@ -52,9 +52,9 @@
         </style>
         <link
           rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/obook@2.1.12/statics/css/github-markdown.css"
+          href="https://cdn.jsdelivr.net/npm/obook@2.1.15/statics/css/github-markdown.css"
         />
-        <p><l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.12/blocks/simp-block.html"></l-m></p>
+        <p><l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.15/blocks/simp-block.html"></l-m></p>
 <simp-block>
 
 <img src="../publics/logo.svg" class="logo" />
@@ -99,9 +99,9 @@
 
 
         <script>
-          export const parent = "https://cdn.jsdelivr.net/npm/obook@2.1.12/statics/layouts/header-layout.html";
+          export const parent = "https://cdn.jsdelivr.net/npm/obook@2.1.15/statics/layouts/header-layout.html";
 
-          import pageInit from "https://cdn.jsdelivr.net/npm/obook@2.1.12/statics/page-init.mjs";
+          import pageInit from "https://cdn.jsdelivr.net/npm/obook@2.1.15/statics/page-init.mjs";
 
           export default async (...args) => {
             return await pageInit(PATH, args);
@@ -109,7 +109,25 @@
         </script>
       </template>
     </o-app>
+    <div class="body-important other-link">
+      <ul>
+<li><a href="docs/index.html">介紹</a></li>
+<li><a href="docs/run-mode/base-mode.html">標準模式</a></li>
+<li><a href="docs/run-mode/cli-mode.html">命令行模式</a></li>
+<li><a href="docs/run-mode/webapp-mode.html">網頁應用模式</a></li>
+<li><a href="docs/base-files.html">基礎文件</a></li>
+<li><a href="docs/project-docs.html">項目文件</a></li>
+<li><a href="docs/add-analysis.html">添加分析代碼</a></li>
+<li><a href="docs/i18n.html">多語言支持</a></li>
+<li><a href="docs/normal-pages.html">添加非文檔頁面</a></li>
+<li><a href="docs/add-footer.html">添加底部內容</a></li>
+<li><a href="../en/index.html">English-index.html</a></li>
+<li><a href="../cn/index.html">简体中文-index.html</a></li>
+<li><a href="index.html">繁体中文-index.html</a></li>
+
+</ul>
+    </div>
     <div id="loading"></div>
-    <script src="https://cdn.jsdelivr.net/npm/obook@2.1.12/statics/init.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/obook@2.1.15/statics/init.js" type="module"></script>
   </body>
 </html>
