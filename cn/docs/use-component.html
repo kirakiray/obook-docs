@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>多语言支持</title>
+    <title>使用组件</title>
     <script src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.19/dist/ofa.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.19/libs/scsr/scsr.mjs"
@@ -54,24 +54,40 @@
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/css/github-markdown.css"
         />
-        <article class="markdown-body"><h1>多语言支持</h1>
-<p>您可以通过修改 <code>_preview.html</code> 文件中的 <code>book-tool</code> 组件，在内部添加 <code>source</code> 标签来增加其他语言的文档。请注意，其他语言的文档必须要与原文内容一一对应。</p>
-<pre><code class="language-html">&lt;book-tool sw=&quot;./sw.js&quot;&gt;
-    &lt;!-- 引用到你的项目配置文件 --&gt;
-    &lt;source src=&quot;./en/config.json&quot; lang=&quot;en&quot; /&gt;
-    &lt;source src=&quot;./cn/config.json&quot; lang=&quot;cn&quot; /&gt;
-    &lt;source src=&quot;./t-cn/config.json&quot; lang=&quot;t-cn&quot; /&gt;
-    &lt;source src=&quot;./es/config.json&quot; lang=&quot;es&quot; /&gt;
-&lt;/book-tool&gt;
+        <article class="markdown-body"><h1>使用组件</h1>
+<p>由于 obook 基于 <a href="https://ofajs.com/">ofa.js</a> 开发，因此 obook 文档支持使用 <a href="https://ofajs.com/">ofa.js</a> 开发的组件。您可以使用 <code>l-m</code> 组件来引用这些自定义组件，并通过像使用 HTML 标签一样将其包裹起来。以下是一个使用 <a href="https://cdn.jsdelivr.net/npm/obook/blocks/simp-block.html">simp-block</a> 组件的示例：</p>
+<pre><code class="language-markdown">&lt;l-m src=&quot;https://cdn.jsdelivr.net/npm/obook/blocks/simp-block.html&quot;&gt;&lt;/l-m&gt;
+
+&lt;simp-block&gt;
+
+&lt;img src=&quot;../publics/logo.svg&quot; class=&quot;logo&quot; /&gt;
+
+## obook是什么？
+
+### 如果您只想专注于写文档，希望快速创建免费且精美的网站，那么obook就是您的不二选择
+
+[使用文档](./docs/index.md)
+
+&lt;/simp-block&gt;
 </code></pre>
-<p>在上述代码中，我们使用了 <code>source</code> 标签来引入不同语言版本的文档配置文件。同时，<code>lang</code> 属性用于指定文档所使用的语言。目前支持的语言选项如下：</p>
-<ul>
-<li>英语 (en)</li>
-<li>简体中文 (cn)</li>
-<li>繁体中文 (t-cn)</li>
-<li>西班牙语 (es)</li>
-</ul>
-<p>通过这种方式，您可以轻松为不同语言的用户提供相应语言版本的网站内容；</p>
+<h2>开发自己的组件</h2>
+<p>您可以点击 <a href="https://ofajs.com/en/cases/simple-component.html">制作组件</a> 来查阅如何开发符合您需求的自定义组件。一旦您开发完成了自己的组件，将其放置在文档站的根目录下的 <strong>publics</strong> 目录下，并使用相对路径的方式来引用这个组件，以便在文档中使用。示例如下：</p>
+<pre><code class="language-html">&lt;!-- /publics/my-comp.html --&gt;
+&lt;!-- 您开发的自定义组件 --&gt;
+&lt;template component&gt;
+  ...
+&lt;/template&gt;
+</code></pre>
+<pre><code class="language-markdown">&lt;!-- /en/index.md --&gt;
+&lt;l-m src=&quot;../publics/my-comp.html&quot;&gt;&lt;/l-m&gt;
+
+&lt;my-comp&gt;
+
+...
+
+&lt;/my-comp&gt;
+</code></pre>
+<p>请注意，自定义组件内的 Markdown 内容将被翻译成 HTML 元素，例如普通换行段落将被转换成 <code>p</code> 元素，<code>## </code>将被翻译成 <code>h2</code> 等。在自定义组件内，您可以通过获取 slot 内的元素进行初始化和处理。</p>
 
     <article-footer></article-footer>
     </article>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>添加分析代碼</title>
+    <title>使用組件</title>
     <script src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.19/dist/ofa.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.19/libs/scsr/scsr.mjs"
@@ -54,31 +54,40 @@
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/css/github-markdown.css"
         />
-        <article class="markdown-body"><h1>添加分析代碼</h1>
-<p>如果您需要跟蹤和統計您網站的訪問數據，我們建議您使用 <a href="https://analytics.google.com">谷歌分析</a>。</p>
-<p>要添加分析代碼，請按照以下步驟操作：</p>
-<ol>
-<li><p>使用您的代碼編輯器打開 <code>_preview.html</code> 文件。</p>
-</li>
-<li><p>在 <code>&lt;book-tool&gt;</code> 標簽中添加一個帶有 <code>inject-head</code> 屬性的 <code>&lt;template&gt;</code> 標簽，並將您的統計代碼放置在模板內，類似如下所示：</p>
-</li>
-</ol>
-<pre><code class="language-html">&lt;book-tool sw=&quot;./doc-sw.js&quot;&gt;
-   &lt;source src=&quot;./cn/config.json&quot; lang=&quot;cn&quot; /&gt;
-   &lt;template inject-head&gt;
-        &lt;!-- Google tag (gtag.js) --&gt;
-        &lt;script async src=&quot;https://www.googletagmanager.com/gtag/js?id=G-xxxxxxxxxx&quot;&gt;&lt;/script&gt;
-        &lt;script&gt;
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag(&#39;js&#39;, new Date());
+        <article class="markdown-body"><h1>使用組件</h1>
+<p>由於 obook 基於 <a href="https://ofajs.com/">ofa.js</a> 開發，因此 obook 文檔支持使用 <a href="https://ofajs.com/">ofa.js</a> 開發的組件。您可以使用 <code>l-m</code> 組件來引用這些自定義組件，並通過像使用 HTML 標簽一樣將其包裹起來。以下是一個使用 <a href="https://cdn.jsdelivr.net/npm/obook/blocks/simp-block.html">simp-block</a> 組件的示例：</p>
+<pre><code class="language-markdown">&lt;l-m src=&quot;https://cdn.jsdelivr.net/npm/obook/blocks/simp-block.html&quot;&gt;&lt;/l-m&gt;
 
-        gtag(&#39;config&#39;, &#39;G-xxxxxxxxxx&#39;);
-        &lt;/script&gt;
-   &lt;/template&gt;
-&lt;/book-tool&gt;
+&lt;simp-block&gt;
+
+&lt;img src=&quot;../publics/logo.svg&quot; class=&quot;logo&quot; /&gt;
+
+## obook是什麽？
+
+### 如果您只想專注於寫文檔，希望快速創建免費且精美的網站，那麽obook就是您的不二選擇
+
+[使用文檔](./docs/index.md)
+
+&lt;/simp-block&gt;
 </code></pre>
-<p>一旦您添加了分析代碼，請重新打包項目。分析代碼會插入到所有頁面的頭部，以便您可以輕松跟蹤和分析您網站的訪問數據。</p>
+<h2>開發自己的組件</h2>
+<p>您可以點擊 <a href="https://ofajs.com/en/cases/simple-component.html">制作組件</a> 來查閱如何開發符合您需求的自定義組件。一旦您開發完成了自己的組件，將其放置在文檔站的根目錄下的 <strong>publics</strong> 目錄下，並使用相對路徑的方式來引用這個組件，以便在文檔中使用。示例如下：</p>
+<pre><code class="language-html">&lt;!-- /publics/my-comp.html --&gt;
+&lt;!-- 您開發的自定義組件 --&gt;
+&lt;template component&gt;
+  ...
+&lt;/template&gt;
+</code></pre>
+<pre><code class="language-markdown">&lt;!-- /en/index.md --&gt;
+&lt;l-m src=&quot;../publics/my-comp.html&quot;&gt;&lt;/l-m&gt;
+
+&lt;my-comp&gt;
+
+...
+
+&lt;/my-comp&gt;
+</code></pre>
+<p>請注意，自定義組件內的 Markdown 內容將被翻譯成 HTML 元素，例如普通換行段落將被轉換成 <code>p</code> 元素，<code>## </code>將被翻譯成 <code>h2</code> 等。在自定義組件內，您可以通過獲取 slot 內的元素進行初始化和處理。</p>
 
     <article-footer></article-footer>
     </article>

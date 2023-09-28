@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Basic Files</title>
+    <title>Use Components</title>
     <script src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.19/dist/ofa.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.19/libs/scsr/scsr.mjs"
@@ -54,33 +54,27 @@
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/css/github-markdown.css"
         />
-        <article class="markdown-body"><h1>Basic Files</h1>
-<p>The base files are equivalent to the scaffolding for <code>o-book</code> startup. They serve as the foundation for previewing and packaging your project. They are indirectly related to your Markdown website, and the packaged files will not include these base files. If you are not a developer or do not care about the details of the scaffolding, you can skip this chapter and go directly to <a href="./project-docs.html">Project Files</a>.</p>
-<p>The most important basic files of <code>o-book</code> are <code>sw.js</code> and <code>_preview.html</code>.</p>
-<h3>sw.js</h3>
-<p><code>sw.js</code> is one of the basic files with only one line of code, which is used to initialize the official file. It does not require much attention.</p>
-<pre><code class="language-javascript">// sw.js
-importScripts(`https://cdn.jsdelivr.net/npm/obook@2.1.16/src/sw/base.js`);
+        <article class="markdown-body"><h1>Use Components</h1>
+<p>Since obook is developed based on <a href="https://ofajs.com/">ofa.js</a>, the obook documentation supports the use of components developed with <a href="https://ofajs.com/">ofa.js</a>. You can use the <code>l-m</code> component to reference these custom components and wrap them around as if using HTML tags. Here&#39;s an example of using the <a href="https://cdn.jsdelivr.net/npm/obook/blocks/simp-block.html">simp-block</a> component:
+obook is a simplified Chinese text that describes a tool for creating free and beautiful websites for writing documents. It provides a simplified block and a logo.</p>
+<p>Developing your own components</p>
+<p>You can click <a href="https://ofajs.com/en/cases/simple-component.html">Create Component</a> to learn how to develop a custom component that meets your needs. Once you have finished developing your own component, place it in the <strong>publics</strong> directory at the root of the document station, and use a relative path to reference this component for use in the document. An example is as follows:</p>
+<pre><code class="language-html">&lt;!-- /publics/my-comp.html --&gt;
+&lt;!-- Your custom component developed --&gt;
+&lt;template component&gt;
+  ...
+&lt;/template&gt;
 </code></pre>
-<h3>_preview.html</h3>
-<p><code>_preview.html</code> is the file that initializes the project preview. The main code is as follows:</p>
-<pre><code class="language-html">&lt;!-- Loaded the book-tool component using l-m --&gt;
-&lt;l-m src=&quot;https://cdn.jsdelivr.net/npm/obook@2.1.16/src/book-tool.html&quot;&gt;&lt;/l-m&gt;
-&lt;!-- Referenced the sw.js file mentioned above using the sw attribute. If the sw.js file has been renamed, it should be correspondingly changed here --&gt;
-&lt;book-tool sw=&quot;./sw.js&quot;&gt;
-    &lt;!-- Referenced your project configuration file --&gt;
-    &lt;source src=&quot;./en/config.json&quot; lang=&quot;en&quot; /&gt;
-    &lt;source src=&quot;./cn/config.json&quot; lang=&quot;cn&quot; /&gt;
-&lt;/book-tool&gt;
+<pre><code class="language-markdown">&lt;!-- /en/index.md --&gt;
+&lt;l-m src=&quot;../publics/my-comp.html&quot;&gt;&lt;/l-m&gt;
+
+&lt;my-comp&gt;
+
+...
+
+&lt;/my-comp&gt;
 </code></pre>
-<p>Among them, <code>source</code> refers to the location of the <strong>project configuration file</strong>, and <strong>project files</strong> will be discussed in the next chapter. <code>lang</code> attribute is used to set the default language used by the document station. <code>obook</code> supports multiple languages by default. If multiple language support is not needed, only one <code>source</code> needs to be kept.</p>
-<p>Currently, the official <code>o-book</code> supports languages including:</p>
-<ul>
-<li><strong>en</strong> English</li>
-<li><strong>cn</strong> Simplified Chinese</li>
-<li><strong>t-cn</strong> Traditional Chinese</li>
-<li><strong>es</strong> Spanish</li>
-</ul>
+<p>Please note that the Markdown content inside custom components will be translated into HTML elements. For example, regular line breaks will be converted into <code>p</code> elements, and <code>## </code> will be translated into <code>h2</code>, and so on. Inside custom components, you can initialize and process elements by accessing the elements inside the slot.</p>
 
     <article-footer></article-footer>
     </article>

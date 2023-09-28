@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>基础文件</title>
-    <script src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.18/dist/ofa.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.19/dist/ofa.min.js"></script>
     <script
-      src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.18/libs/scsr/scsr.mjs"
+      src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.19/libs/scsr/scsr.mjs"
       type="module"
     ></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/obook@2.1.15/statics/css/public.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/css/public.css" />
     <style>
       html,
       body {
@@ -35,9 +35,9 @@
       
   </head>
   <body>
-    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.15/statics/comps/doc-container.html"></l-m>
-    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.15/statics/comps/doc-header/doc-header.html"></l-m>
-    <o-app src="https://cdn.jsdelivr.net/npm/obook@2.1.15/statics/app-config.mjs">
+    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/comps/doc-container.html"></l-m>
+    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/comps/doc-header/doc-header.html"></l-m>
+    <o-app src="https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/app-config.mjs">
       <template page>
         <style>
           .markdown-body::before,
@@ -52,7 +52,7 @@
         </style>
         <link
           rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/obook@2.1.15/statics/css/github-markdown.css"
+          href="https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/css/github-markdown.css"
         />
         <article class="markdown-body"><h1>基础文件</h1>
 <p>基础文件相当于 <code>o-book</code> 启动的脚手架，需要有这层基底才能进行项目的预览和打包。它们与你的 Markdown 网站间接相关，打包后的文件不会包含这些基础文件。如果你不是开发人员，或者不关心脚手架的细节，也可以跳过这章，直接查看<a href="./project-docs.html">项目文件</a>。</p>
@@ -60,12 +60,12 @@
 <h3>sw.js</h3>
 <p><code>sw.js</code> 是基础文件之一，只有一行代码，内容是引用官方文件进行初始化，不需要过多关注：</p>
 <pre><code class="language-javascript">// sw.js
-importScripts(`https://cdn.jsdelivr.net/npm/obook@2.1.15/src/sw/base.js`);
+importScripts(`https://cdn.jsdelivr.net/npm/obook@2.1.16/src/sw/base.js`);
 </code></pre>
 <h3>_preview.html</h3>
 <p><code>_preview.html</code> 是项目启动预览初始化的文件，主要的代码如下：</p>
 <pre><code class="language-html">&lt;!-- 通过 l-m 加载了 book-tool 组件 --&gt;
-&lt;l-m src=&quot;https://cdn.jsdelivr.net/npm/obook@2.1.15/src/book-tool.html&quot;&gt;&lt;/l-m&gt;
+&lt;l-m src=&quot;https://cdn.jsdelivr.net/npm/obook@2.1.16/src/book-tool.html&quot;&gt;&lt;/l-m&gt;
 &lt;!-- 通过 sw 属性引用上面提到的 sw.js 文件，如果 sw.js 更换了命名，这里就需要对应着更换 --&gt;
 &lt;book-tool sw=&quot;./sw.js&quot;&gt;
     &lt;!-- 引用到你的项目配置文件 --&gt;
@@ -85,9 +85,9 @@ importScripts(`https://cdn.jsdelivr.net/npm/obook@2.1.15/src/sw/base.js`);
     <article-footer></article-footer>
     </article>
         <script>
-          export const parent = "https://cdn.jsdelivr.net/npm/obook@2.1.15/statics/layouts/article-layout.html";
+          export const parent = "https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/layouts/article-layout.html";
 
-          import pageInit from "https://cdn.jsdelivr.net/npm/obook@2.1.15/statics/document-page-init.mjs";
+          import pageInit from "https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/document-page-init.mjs";
 
           export default async (...args) => {
             return await pageInit(PATH, args);
@@ -107,11 +107,12 @@ importScripts(`https://cdn.jsdelivr.net/npm/obook@2.1.15/src/sw/base.js`);
 <li><a href="i18n.html">多语言支持</a></li>
 <li><a href="normal-pages.html">添加非文档页面</a></li>
 <li><a href="add-footer.html">添加底部内容</a></li>
+<li><a href="use-component.html">使用组件</a></li>
 <li><a href="../../en/index.html">English-index.html</a></li>
 <li><a href="../index.html">简体中文-index.html</a></li>
 <li><a href="../../t-cn/index.html">繁体中文-index.html</a></li>
 
 </ul></div>
-    <script src="https://cdn.jsdelivr.net/npm/obook@2.1.15/statics/init.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/init.js" type="module"></script>
   </body>
 </html>
