@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Use Components</title>
-    <script src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.19/dist/ofa.min.js"></script>
+    <title>Using Components</title>
+    <script src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.21/dist/ofa.min.js"></script>
     <script
-      src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.19/libs/scsr/scsr.mjs"
+      src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.21/libs/scsr/scsr.mjs"
       type="module"
     ></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/css/public.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/obook@2.1.23/statics/css/public.css" />
     <style>
       html,
       body {
@@ -35,9 +35,9 @@
       
   </head>
   <body>
-    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/comps/doc-container.html"></l-m>
-    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/comps/doc-header/doc-header.html"></l-m>
-    <o-app src="https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/app-config.mjs">
+    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.23/statics/comps/doc-container.html"></l-m>
+    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.23/statics/comps/doc-header/doc-header.html"></l-m>
+    <o-app src="https://cdn.jsdelivr.net/npm/obook@2.1.23/statics/app-config.mjs">
       <template page>
         <style>
           .markdown-body::before,
@@ -52,15 +52,28 @@
         </style>
         <link
           rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/css/github-markdown.css"
+          href="https://cdn.jsdelivr.net/npm/obook@2.1.23/statics/css/github-markdown.css"
         />
-        <article class="markdown-body"><h1>Use Components</h1>
-<p>Since obook is developed based on <a href="https://ofajs.com/">ofa.js</a>, the obook documentation supports the use of components developed with <a href="https://ofajs.com/">ofa.js</a>. You can use the <code>l-m</code> component to reference these custom components and wrap them around as if using HTML tags. Here&#39;s an example of using the <a href="https://cdn.jsdelivr.net/npm/obook/blocks/simp-block.html">simp-block</a> component:
-obook is a simplified Chinese text that describes a tool for creating free and beautiful websites for writing documents. It provides a simplified block and a logo.</p>
-<p>Developing your own components</p>
-<p>You can click <a href="https://ofajs.com/en/cases/simple-component.html">Create Component</a> to learn how to develop a custom component that meets your needs. Once you have finished developing your own component, place it in the <strong>publics</strong> directory at the root of the document station, and use a relative path to reference this component for use in the document. An example is as follows:</p>
+        <article class="markdown-body"><h1>Using Components</h1>
+<p>Since obook is based on <a href="https://ofajs.com/">ofa.js</a> development, the obook documentation supports the use of components developed with <a href="https://ofajs.com/">ofa.js</a>. You can use the <code>l-m</code> component to reference these custom components and wrap them as if using HTML tags. Here is an example using the <a href="https://cdn.jsdelivr.net/npm/obook/blocks/simp-block.html">simp-block</a> component:</p>
+<pre><code class="language-markdown">&lt;l-m src=&quot;https://cdn.jsdelivr.net/npm/obook/blocks/simp-block.html&quot;&gt;&lt;/l-m&gt;
+
+&lt;simp-block&gt;
+
+&lt;img src=&quot;../publics/logo.svg&quot; class=&quot;logo&quot; /&gt;
+
+## What is obook?
+
+### If you only want to focus on writing documents and want to quickly create free and beautiful websites, then obook is your first choice
+
+[Documentation](./docs/index.md)
+
+&lt;/simp-block&gt;
+</code></pre>
+<h2>Developing Your Own Component</h2>
+<p>You can click on <a href="https://ofajs.com/en/cases/simple-component.html">Making Components</a> to learn how to develop custom components that meet your needs. Once you have developed your own component, place it in the <strong>publics</strong> directory under the root directory of the document station, and use relative paths to reference this component for use in the document. An example is shown below:</p>
 <pre><code class="language-html">&lt;!-- /publics/my-comp.html --&gt;
-&lt;!-- Your custom component developed --&gt;
+&lt;!-- Your custom component that you developed --&gt;
 &lt;template component&gt;
   ...
 &lt;/template&gt;
@@ -74,14 +87,14 @@ obook is a simplified Chinese text that describes a tool for creating free and b
 
 &lt;/my-comp&gt;
 </code></pre>
-<p>Please note that the Markdown content inside custom components will be translated into HTML elements. For example, regular line breaks will be converted into <code>p</code> elements, and <code>## </code> will be translated into <code>h2</code>, and so on. Inside custom components, you can initialize and process elements by accessing the elements inside the slot.</p>
+<p>Please note that the Markdown content inside custom components will be translated into HTML elements. For example, regular line breaks will be converted into <code>p</code> elements, and <code>##</code> will be translated into <code>h2</code> elements, etc. Inside custom components, you can initialize and process elements by accessing the elements inside the slot.</p>
 
     <article-footer></article-footer>
     </article>
         <script>
-          export const parent = "https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/layouts/article-layout.html";
+          export const parent = "https://cdn.jsdelivr.net/npm/obook@2.1.23/statics/layouts/article-layout.html";
 
-          import pageInit from "https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/document-page-init.mjs";
+          import pageInit from "https://cdn.jsdelivr.net/npm/obook@2.1.23/statics/document-page-init.mjs";
 
           export default async (...args) => {
             return await pageInit(PATH, args);
@@ -92,21 +105,21 @@ obook is a simplified Chinese text that describes a tool for creating free and b
     <div id="loading"></div>
     <div class="body-important other-link"><ul>
 <li><a href="index.html">Introduction</a></li>
-<li><a href="run-mode/base-mode.html">Standard mode</a></li>
-<li><a href="run-mode/cli-mode.html">Command line mode</a></li>
-<li><a href="run-mode/webapp-mode.html">Web application mode</a></li>
-<li><a href="base-files.html">Base files</a></li>
-<li><a href="project-docs.html">Project documentation</a></li>
-<li><a href="add-analysis.html">Add analysis code</a></li>
-<li><a href="i18n.html">Multi-language support</a></li>
-<li><a href="normal-pages.html">Add non-document pages</a></li>
-<li><a href="add-footer.html">Add footer content</a></li>
-<li><a href="use-component.html">Use components</a></li>
+<li><a href="run-mode/base-mode.html">Standard Mode</a></li>
+<li><a href="run-mode/cli-mode.html">Command Line Mode</a></li>
+<li><a href="run-mode/webapp-mode.html">Web Application Mode</a></li>
+<li><a href="base-files.html">Basic Files</a></li>
+<li><a href="project-docs.html">Project Documents</a></li>
+<li><a href="add-analysis.html">Add Analysis Code</a></li>
+<li><a href="i18n.html">Multi-language Support</a></li>
+<li><a href="normal-pages.html">Add Non-Document Pages</a></li>
+<li><a href="add-footer.html">Add Footer Content</a></li>
+<li><a href="use-component.html">Use Components</a></li>
 <li><a href="../index.html">English-index.html</a></li>
 <li><a href="../../cn/index.html">简体中文-index.html</a></li>
 <li><a href="../../t-cn/index.html">繁体中文-index.html</a></li>
 
 </ul></div>
-    <script src="https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/init.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/obook@2.1.23/statics/init.js" type="module"></script>
   </body>
 </html>

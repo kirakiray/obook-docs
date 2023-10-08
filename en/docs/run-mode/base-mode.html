@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Standard Mode</title>
-    <script src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.19/dist/ofa.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.21/dist/ofa.min.js"></script>
     <script
-      src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.19/libs/scsr/scsr.mjs"
+      src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.21/libs/scsr/scsr.mjs"
       type="module"
     ></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/css/public.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/obook@2.1.23/statics/css/public.css" />
     <style>
       html,
       body {
@@ -35,9 +35,9 @@
       
   </head>
   <body>
-    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/comps/doc-container.html"></l-m>
-    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/comps/doc-header/doc-header.html"></l-m>
-    <o-app src="https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/app-config.mjs">
+    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.23/statics/comps/doc-container.html"></l-m>
+    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.23/statics/comps/doc-header/doc-header.html"></l-m>
+    <o-app src="https://cdn.jsdelivr.net/npm/obook@2.1.23/statics/app-config.mjs">
       <template page>
         <style>
           .markdown-body::before,
@@ -52,31 +52,31 @@
         </style>
         <link
           rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/css/github-markdown.css"
+          href="https://cdn.jsdelivr.net/npm/obook@2.1.23/statics/css/github-markdown.css"
         />
         <article class="markdown-body"><h1>Standard Mode</h1>
-<p>Standard mode is to use the local static server and open the prepared <code>_preview.html</code> file. If you are using our recommended VSCode editor, then this step is very simple:</p>
+<p>The standard mode is to use a local static server and open the prepared <code>_preview.html</code> file. If you are using our recommended VSCode editor, this step is very simple:</p>
 <ol>
-<li><p>Open <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer">LiveServer</a> extension page, click install, and it will automatically open VSCode and install the extension.</p>
+<li><p>Open the <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer">LiveServer</a> extension page, click install, and then VSCode will automatically open and install the extension.</p>
 </li>
 <li><p>Unzip the downloaded project and open the folder with VSCode.</p>
 </li>
-<li><p>In VSCode, right-click on the <code>_preview.html</code> file in the root directory and select <code>open with live server</code>. After the page initialization is complete, you can click on the links on the page to preview.</p>
+<li><p>In VSCode, right-click on the <code>_preview.html</code> file in the root directory and select <code>open with live server</code>. After the page is initialized, you can click on the links on the page to preview.</p>
 </li>
 </ol>
-<p><code>_preview.html</code> file is the launcher for previewing projects. You can also use other extensions that can start a static server instead of LiveServer.</p>
-<p>This method of opening with VSCode has the lowest cost, and the editor can quickly start a static server. Of course, you can also use other Markdown editors, such as Typora, development tools such as Eclipse, or even the text editor that comes with your system, as long as you find it convenient.</p>
-<p>As for static servers, you can use locally built servers, such as Nginx, Apache, etc., as long as they can be used to access static HTML files.</p>
+<p><code>_preview.html</code> file is the launcher for previewing the project. You can also use other extensions that can start a static server instead of LiveServer.</p>
+<p>This is the easy way to open using VSCode, where you can quickly launch a static server within the editor. Of course, you can also use other Markdown editors, such as Typora, development tools like Eclipse, or even your system&#39;s built-in text editor, as long as you find it convenient.</p>
+<p>As for the static server, you can use locally built servers such as Nginx, Apache, etc., as long as they can be used to access static HTML files.</p>
 <h2>How to package</h2>
-<p>Same as above, open <code>_preview.html</code> in server mode, click <code>Download Website</code> to get the packaged static files.</p>
-<p>Next, you can directly access the <a href="../base-files.html">base file</a> section for more information.</p>
+<p>Same as above, open <code>_preview.html</code> under server mode, click <code>Download Website</code> to get the packaged static files.</p>
+<p>Next, you can directly go to the <a href="../base-files.html">base files</a> section for more information.</p>
 
     <article-footer></article-footer>
     </article>
         <script>
-          export const parent = "https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/layouts/article-layout.html";
+          export const parent = "https://cdn.jsdelivr.net/npm/obook@2.1.23/statics/layouts/article-layout.html";
 
-          import pageInit from "https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/document-page-init.mjs";
+          import pageInit from "https://cdn.jsdelivr.net/npm/obook@2.1.23/statics/document-page-init.mjs";
 
           export default async (...args) => {
             return await pageInit(PATH, args);
@@ -87,21 +87,21 @@
     <div id="loading"></div>
     <div class="body-important other-link"><ul>
 <li><a href="../index.html">Introduction</a></li>
-<li><a href="base-mode.html">Standard mode</a></li>
-<li><a href="cli-mode.html">Command line mode</a></li>
-<li><a href="webapp-mode.html">Web application mode</a></li>
-<li><a href="../base-files.html">Base files</a></li>
-<li><a href="../project-docs.html">Project documentation</a></li>
-<li><a href="../add-analysis.html">Add analysis code</a></li>
-<li><a href="../i18n.html">Multi-language support</a></li>
-<li><a href="../normal-pages.html">Add non-document pages</a></li>
-<li><a href="../add-footer.html">Add footer content</a></li>
-<li><a href="../use-component.html">Use components</a></li>
-<li><a href="../../../cn/index.html">简体中文-index.html</a></li>
+<li><a href="base-mode.html">Standard Mode</a></li>
+<li><a href="cli-mode.html">Command Line Mode</a></li>
+<li><a href="webapp-mode.html">Web Application Mode</a></li>
+<li><a href="../base-files.html">Basic Files</a></li>
+<li><a href="../project-docs.html">Project Documents</a></li>
+<li><a href="../add-analysis.html">Add Analysis Code</a></li>
+<li><a href="../i18n.html">Multi-language Support</a></li>
+<li><a href="../normal-pages.html">Add Non-Document Pages</a></li>
+<li><a href="../add-footer.html">Add Footer Content</a></li>
+<li><a href="../use-component.html">Use Components</a></li>
 <li><a href="../../index.html">English-index.html</a></li>
+<li><a href="../../../cn/index.html">简体中文-index.html</a></li>
 <li><a href="../../../t-cn/index.html">繁体中文-index.html</a></li>
 
 </ul></div>
-    <script src="https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/init.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/obook@2.1.23/statics/init.js" type="module"></script>
   </body>
 </html>

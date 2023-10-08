@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Basic Files</title>
-    <script src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.19/dist/ofa.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.21/dist/ofa.min.js"></script>
     <script
-      src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.19/libs/scsr/scsr.mjs"
+      src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.21/libs/scsr/scsr.mjs"
       type="module"
     ></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/css/public.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/obook@2.1.23/statics/css/public.css" />
     <style>
       html,
       body {
@@ -35,9 +35,9 @@
       
   </head>
   <body>
-    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/comps/doc-container.html"></l-m>
-    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/comps/doc-header/doc-header.html"></l-m>
-    <o-app src="https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/app-config.mjs">
+    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.23/statics/comps/doc-container.html"></l-m>
+    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.23/statics/comps/doc-header/doc-header.html"></l-m>
+    <o-app src="https://cdn.jsdelivr.net/npm/obook@2.1.23/statics/app-config.mjs">
       <template page>
         <style>
           .markdown-body::before,
@@ -52,29 +52,28 @@
         </style>
         <link
           rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/css/github-markdown.css"
+          href="https://cdn.jsdelivr.net/npm/obook@2.1.23/statics/css/github-markdown.css"
         />
         <article class="markdown-body"><h1>Basic Files</h1>
-<p>The base files are equivalent to the scaffolding for <code>o-book</code> startup. They serve as the foundation for previewing and packaging your project. They are indirectly related to your Markdown website, and the packaged files will not include these base files. If you are not a developer or do not care about the details of the scaffolding, you can skip this chapter and go directly to <a href="./project-docs.html">Project Files</a>.</p>
-<p>The most important basic files of <code>o-book</code> are <code>sw.js</code> and <code>_preview.html</code>.</p>
+<p>The basic files are equivalent to the scaffold for <code>o-book</code>, which is necessary to preview and build the project. They are indirectly related to your Markdown website, and the packaged files will not include these basic files. If you are not a developer or do not care about the details of the scaffold, you can skip this chapter and go directly to <a href="./project-docs.html">project files</a>.</p>
+<p><code>o-book</code> has two main foundational files: <code>sw.js</code> and <code>_preview.html</code>.</p>
 <h3>sw.js</h3>
-<p><code>sw.js</code> is one of the basic files with only one line of code, which is used to initialize the official file. It does not require much attention.</p>
 <pre><code class="language-javascript">// sw.js
-importScripts(`https://cdn.jsdelivr.net/npm/obook@2.1.16/src/sw/base.js`);
+importScripts(`https://cdn.jsdelivr.net/npm/obook@2.1.23/src/sw/base.js`);
 </code></pre>
 <h3>_preview.html</h3>
 <p><code>_preview.html</code> is the file that initializes the project preview. The main code is as follows:</p>
-<pre><code class="language-html">&lt;!-- Loaded the book-tool component using l-m --&gt;
-&lt;l-m src=&quot;https://cdn.jsdelivr.net/npm/obook@2.1.16/src/book-tool.html&quot;&gt;&lt;/l-m&gt;
-&lt;!-- Referenced the sw.js file mentioned above using the sw attribute. If the sw.js file has been renamed, it should be correspondingly changed here --&gt;
+<pre><code class="language-html">&lt;!-- The book-tool component is loaded through l-m --&gt;
+&lt;l-m src=&quot;https://cdn.jsdelivr.net/npm/obook@2.1.23/src/book-tool.html&quot;&gt;&lt;/l-m&gt;
+&lt;!-- The sw.js file mentioned above is referenced through the sw attribute. If the name of sw.js changes, it needs to be replaced here as well --&gt;
 &lt;book-tool sw=&quot;./sw.js&quot;&gt;
-    &lt;!-- Referenced your project configuration file --&gt;
+    &lt;!-- Reference your project configuration files --&gt;
     &lt;source src=&quot;./en/config.json&quot; lang=&quot;en&quot; /&gt;
     &lt;source src=&quot;./cn/config.json&quot; lang=&quot;cn&quot; /&gt;
 &lt;/book-tool&gt;
 </code></pre>
-<p>Among them, <code>source</code> refers to the location of the <strong>project configuration file</strong>, and <strong>project files</strong> will be discussed in the next chapter. <code>lang</code> attribute is used to set the default language used by the document station. <code>obook</code> supports multiple languages by default. If multiple language support is not needed, only one <code>source</code> needs to be kept.</p>
-<p>Currently, the official <code>o-book</code> supports languages including:</p>
+<p>In the above content, the <code>source</code> refers to the location of the <strong>project configuration file</strong>, and the <strong>project file</strong> will be discussed in the next chapter. The <code>lang</code> attribute is used to set the default language used by the document site. By default, <code>obook</code> supports multiple languages. If you do not need multi-language support, you can keep only one <code>source</code>.</p>
+<p>Currently, the official language packages supported by <code>o-book</code> include:</p>
 <ul>
 <li><strong>en</strong> English</li>
 <li><strong>cn</strong> Simplified Chinese</li>
@@ -85,9 +84,9 @@ importScripts(`https://cdn.jsdelivr.net/npm/obook@2.1.16/src/sw/base.js`);
     <article-footer></article-footer>
     </article>
         <script>
-          export const parent = "https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/layouts/article-layout.html";
+          export const parent = "https://cdn.jsdelivr.net/npm/obook@2.1.23/statics/layouts/article-layout.html";
 
-          import pageInit from "https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/document-page-init.mjs";
+          import pageInit from "https://cdn.jsdelivr.net/npm/obook@2.1.23/statics/document-page-init.mjs";
 
           export default async (...args) => {
             return await pageInit(PATH, args);
@@ -98,21 +97,21 @@ importScripts(`https://cdn.jsdelivr.net/npm/obook@2.1.16/src/sw/base.js`);
     <div id="loading"></div>
     <div class="body-important other-link"><ul>
 <li><a href="index.html">Introduction</a></li>
-<li><a href="run-mode/base-mode.html">Standard mode</a></li>
-<li><a href="run-mode/cli-mode.html">Command line mode</a></li>
-<li><a href="run-mode/webapp-mode.html">Web application mode</a></li>
-<li><a href="base-files.html">Base files</a></li>
-<li><a href="project-docs.html">Project documentation</a></li>
-<li><a href="add-analysis.html">Add analysis code</a></li>
-<li><a href="i18n.html">Multi-language support</a></li>
-<li><a href="normal-pages.html">Add non-document pages</a></li>
-<li><a href="add-footer.html">Add footer content</a></li>
-<li><a href="use-component.html">Use components</a></li>
+<li><a href="run-mode/base-mode.html">Standard Mode</a></li>
+<li><a href="run-mode/cli-mode.html">Command Line Mode</a></li>
+<li><a href="run-mode/webapp-mode.html">Web Application Mode</a></li>
+<li><a href="base-files.html">Basic Files</a></li>
+<li><a href="project-docs.html">Project Documents</a></li>
+<li><a href="add-analysis.html">Add Analysis Code</a></li>
+<li><a href="i18n.html">Multi-language Support</a></li>
+<li><a href="normal-pages.html">Add Non-Document Pages</a></li>
+<li><a href="add-footer.html">Add Footer Content</a></li>
+<li><a href="use-component.html">Use Components</a></li>
 <li><a href="../index.html">English-index.html</a></li>
 <li><a href="../../cn/index.html">简体中文-index.html</a></li>
 <li><a href="../../t-cn/index.html">繁体中文-index.html</a></li>
 
 </ul></div>
-    <script src="https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/init.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/obook@2.1.23/statics/init.js" type="module"></script>
   </body>
 </html>

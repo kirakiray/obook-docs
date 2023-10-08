@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>obook: The simplest document building tool</title>
-    <script src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.19/dist/ofa.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.21/dist/ofa.min.js"></script>
     <script
-      src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.19/libs/scsr/scsr.mjs"
+      src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.21/libs/scsr/scsr.mjs"
       type="module"
     ></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/css/public.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/obook@2.1.23/statics/css/public.css" />
     <style>
       html,
       body {
@@ -35,9 +35,9 @@
       
   </head>
   <body>
-    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/comps/doc-container.html"></l-m>
-    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/comps/doc-header/doc-header.html"></l-m>
-    <o-app src="https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/app-config.mjs">
+    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.23/statics/comps/doc-container.html"></l-m>
+    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.23/statics/comps/doc-header/doc-header.html"></l-m>
+    <o-app src="https://cdn.jsdelivr.net/npm/obook@2.1.23/statics/app-config.mjs">
       <template page>
         <style>
           .markdown-body::before,
@@ -49,70 +49,62 @@
           .markdown-body::after {
             height: 32px;
           }
+
+          p {
+            margin: 0;
+            padding: 0;
+          }
         </style>
         <link
           rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/css/github-markdown.css"
+          href="https://cdn.jsdelivr.net/npm/obook@2.1.23/statics/css/github-markdown.css"
         />
-        <p><l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.16/blocks/simp-block.html"></l-m></p>
+        <p><l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.23/blocks/simp-block.html"></l-m></p>
 <simp-block>
-
 
 <img src="../publics/logo.svg" class="logo" />
 
 <h2>What is obook?</h2>
-<h3>If you only want to focus on writing documents and want to quickly create a free and beautiful website, then obook is your best choice.</h3>
+<h3>If you just want to focus on writing documents and want to quickly create a free and beautiful website, then obook is your best choice.</h3>
 <p><a href="./docs/index.html">User Documentation</a></p>
 </simp-block>
-
-
 
 <simp-block>
 
 <h2>Extremely Simple</h2>
-<h3>You can even get started without reading the documentation by using our web application.</h3>
+<h3>You can even get started without reading the documentation by using our Web application</h3>
 <p><a href="https://kirakiray.github.io/o-book/webapp/">obook previewer</a></p>
 </simp-block>
 
-
-
 <simp-block>
 
-<h2>Completely Free</h2>
-<h3>Generated is a static website, which can be hosted on GitHub Pages without the need to purchase a server.</h3>
+<h2>Completely free</h2>
+<h3>The generated is a static website that can be hosted on GitHub Pages without needing to purchase a server.</h3>
 </simp-block>
-
-
 
 <simp-block>
 
 <h2>Powerful Features</h2>
-<h3>Compatible with mobile devices, including day and night modes; packaged documentation station with complete search function</h3>
-<p>Using other document station generators may require purchasing search microservices.</p>
+<h3>Compatible with mobile devices, including day and night modes; a packaged documentation website with full search capabilities</h3>
+<p>Using other document generators may require purchasing a search microservice.</p>
 </simp-block>
-
-
 
 <simp-block>
 
-<h2>Multilingual Support</h2>
-<h3>The native components of the website provide multi-language support</h3>
-<p>Currently supports <strong>English</strong>, <strong>Simplified Chinese</strong>, <strong>Traditional Chinese</strong>, <strong>Spanish</strong></p>
+<h2>Multi-language support</h2>
+<h3>Website native components provide multilingual support</h3>
+<p>Currently supported languages are <strong>English</strong>, <strong>Simplified Chinese</strong>, <strong>Traditional Chinese</strong>, and <strong>Spanish</strong>.</p>
 </simp-block>
-
-
 
 <simp-block>
 
 <h2>Case study</h2>
-<p>The current site is an example.</p>
+<p>The current site is a case study.</p>
 </simp-block>
-
-
         <script>
-          export const parent = "https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/layouts/header-layout.html";
+          export const parent = "https://cdn.jsdelivr.net/npm/obook@2.1.23/statics/layouts/header-layout.html";
 
-          import pageInit from "https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/page-init.mjs";
+          import pageInit from "https://cdn.jsdelivr.net/npm/obook@2.1.23/statics/page-init.mjs";
 
           export default async (...args) => {
             return await pageInit(PATH, args);
@@ -120,26 +112,24 @@
         </script>
       </template>
     </o-app>
-    <div class="body-important other-link">
-      <ul>
+    <div class="body-important other-link"><ul>
 <li><a href="docs/index.html">Introduction</a></li>
-<li><a href="docs/run-mode/base-mode.html">Standard mode</a></li>
-<li><a href="docs/run-mode/cli-mode.html">Command line mode</a></li>
-<li><a href="docs/run-mode/webapp-mode.html">Web application mode</a></li>
-<li><a href="docs/base-files.html">Base files</a></li>
-<li><a href="docs/project-docs.html">Project documentation</a></li>
-<li><a href="docs/add-analysis.html">Add analysis code</a></li>
-<li><a href="docs/i18n.html">Multi-language support</a></li>
-<li><a href="docs/normal-pages.html">Add non-document pages</a></li>
-<li><a href="docs/add-footer.html">Add footer content</a></li>
-<li><a href="docs/use-component.html">Use components</a></li>
+<li><a href="docs/run-mode/base-mode.html">Standard Mode</a></li>
+<li><a href="docs/run-mode/cli-mode.html">Command Line Mode</a></li>
+<li><a href="docs/run-mode/webapp-mode.html">Web Application Mode</a></li>
+<li><a href="docs/base-files.html">Basic Files</a></li>
+<li><a href="docs/project-docs.html">Project Documents</a></li>
+<li><a href="docs/add-analysis.html">Add Analysis Code</a></li>
+<li><a href="docs/i18n.html">Multi-language Support</a></li>
+<li><a href="docs/normal-pages.html">Add Non-Document Pages</a></li>
+<li><a href="docs/add-footer.html">Add Footer Content</a></li>
+<li><a href="docs/use-component.html">Use Components</a></li>
 <li><a href="index.html">English-index.html</a></li>
 <li><a href="../cn/index.html">简体中文-index.html</a></li>
 <li><a href="../t-cn/index.html">繁体中文-index.html</a></li>
 
-</ul>
-    </div>
+</ul></div>
     <div id="loading"></div>
-    <script src="https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/init.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/obook@2.1.23/statics/init.js" type="module"></script>
   </body>
 </html>

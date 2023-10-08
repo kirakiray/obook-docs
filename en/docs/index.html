@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>o-book 2</title>
-    <script src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.19/dist/ofa.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.21/dist/ofa.min.js"></script>
     <script
-      src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.19/libs/scsr/scsr.mjs"
+      src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.21/libs/scsr/scsr.mjs"
       type="module"
     ></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/css/public.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/obook@2.1.23/statics/css/public.css" />
     <style>
       html,
       body {
@@ -35,9 +35,9 @@
       
   </head>
   <body>
-    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/comps/doc-container.html"></l-m>
-    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/comps/doc-header/doc-header.html"></l-m>
-    <o-app src="https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/app-config.mjs">
+    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.23/statics/comps/doc-container.html"></l-m>
+    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.23/statics/comps/doc-header/doc-header.html"></l-m>
+    <o-app src="https://cdn.jsdelivr.net/npm/obook@2.1.23/statics/app-config.mjs">
       <template page>
         <style>
           .markdown-body::before,
@@ -52,33 +52,33 @@
         </style>
         <link
           rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/css/github-markdown.css"
+          href="https://cdn.jsdelivr.net/npm/obook@2.1.23/statics/css/github-markdown.css"
         />
         <article class="markdown-body"><h1>o-book 2</h1>
-<p>o-book 2 is a documentation generation tool that will be one of the simplest document site generation tools you have ever used. With just one HTML file, you can generate a fully functional document website from the Markdown articles you have written. It is developed based on [ofa.js] (<a href="https://ofajs.com/">https://ofajs.com/</a>) and is very easy to use.</p>
+<p>o-book 2 is a documentation generation tool that will be one of the simplest documentation site generators you have ever used. With just one HTML file, you can turn your Markdown articles into fully functional document websites. It is developed based on <a href="https://ofajs.com/">ofa.js</a> and is very easy to use;</p>
 <h2>Preparation before use</h2>
-<p>Before using o-book, you need to master the basic syntax of <a href="https://www.google.com/search?q=markdown">Markdown</a>. In addition, you also need to prepare a text editor. We recommend using <a href="https://code.visualstudio.com/">VSCode</a> launched by Microsoft. It is not only free, but also has a large number of extensions to choose from, making your document editing work more efficient.</p>
+<p>Before using o-book, you need to master the basic syntax of <a href="https://www.google.com/search?q=markdown">Markdown</a>. In addition, you need to have a text editor ready. We recommend using <a href="https://code.visualstudio.com/">VSCode</a> developed by Microsoft, which is not only free but also has a wide range of extensions to choose from, making your document editing work more efficient.</p>
 <h2>Prepare Files</h2>
-<p>Before writing the document, you need to prepare the basic files of the project locally. For convenience, we have provided you with the initial files of the project. Just click on the following link to download and unzip them to your local machine:
-<a href="../../publics/stand-up.zip">Download project file</a></p>
-<p>Later on, we will explain the meaning of a few key files;</p>
-<h2>Run the project</h2>
-<p>obook provides three ways to run your project. You can start it by <strong>choosing one of the following ways</strong> according to your needs:</p>
+<p>Before writing the document, you need to prepare the basic files of the project locally. For your convenience, we have provided the initial files of the project for you. Just click on the following link to download and unzip them to your local machine:</p>
+<p><a href="../../publics/stand-up.zip">Download project files</a></p>
+<p>Later, we will explain the meanings of several key files;</p>
+<h2>Running the Project</h2>
+<p>The official obook provides three ways to run your project. You can choose one of them <strong>according to your needs</strong> and start it:</p>
 <ol>
-<li><strong>Standard Mode</strong>: Use a local server to view o-book components, allowing for previewing and generating documentation sites.</li>
-<li><strong>Command Line Mode</strong>: Use Node.js and the command line to preview and generate documentation sites.</li>
-<li><strong>Web Application Mode</strong>: Select a local Markdown folder directly through a web page for previewing and generating.</li>
+<li><strong>Standard Mode</strong>: Use a local server to view the o-book component and preview and generate the documentation site.</li>
+<li><strong>Command-line mode</strong>: Use Node.js and the command line to preview and generate the documentation site.</li>
+<li><strong>Web application mode</strong>: Preview and generate by directly selecting a local Markdown folder through a web page.</li>
 </ol>
-<p><a href="./run-mode/base-mode.html">Standard mode</a> requires a static server to open the downloaded file;</p>
-<p><a href="./run-mode/cli-mode.html">Command-line mode</a> requires a certain foundation of front-end development knowledge. Install the <code>o-book</code> module through <code>npm</code>, and then you can use the command line to preview and package projects. This mode can also be a part of script automation.</p>
-<p><a href="./run-mode/webapp-mode.html">Web application mode</a> does not require any development knowledge. Simply open the website, select a local folder, and you can view and package your project;</p>
+<p><a href="./run-mode/base-mode.html">Standard Mode</a> requires a static web server to open the downloaded files.</p>
+<p><a href="./run-mode/cli-mode.html">Command Line Mode</a> requires a certain foundation of frontend development knowledge. After installing the <code>o-book</code> module through <code>npm</code>, you can use the command line to preview and build projects. This mode can also be integrated into script automation.</p>
+<p><a href="./run-mode/webapp-mode.html">Web Application Mode</a> does not require any development knowledge. You just need to open the website and select a local folder to view and package your project.</p>
 
     <article-footer></article-footer>
     </article>
         <script>
-          export const parent = "https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/layouts/article-layout.html";
+          export const parent = "https://cdn.jsdelivr.net/npm/obook@2.1.23/statics/layouts/article-layout.html";
 
-          import pageInit from "https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/document-page-init.mjs";
+          import pageInit from "https://cdn.jsdelivr.net/npm/obook@2.1.23/statics/document-page-init.mjs";
 
           export default async (...args) => {
             return await pageInit(PATH, args);
@@ -89,21 +89,21 @@
     <div id="loading"></div>
     <div class="body-important other-link"><ul>
 <li><a href="index.html">Introduction</a></li>
-<li><a href="run-mode/base-mode.html">Standard mode</a></li>
-<li><a href="run-mode/cli-mode.html">Command line mode</a></li>
-<li><a href="run-mode/webapp-mode.html">Web application mode</a></li>
-<li><a href="base-files.html">Base files</a></li>
-<li><a href="project-docs.html">Project documentation</a></li>
-<li><a href="add-analysis.html">Add analysis code</a></li>
-<li><a href="i18n.html">Multi-language support</a></li>
-<li><a href="normal-pages.html">Add non-document pages</a></li>
-<li><a href="add-footer.html">Add footer content</a></li>
-<li><a href="use-component.html">Use components</a></li>
+<li><a href="run-mode/base-mode.html">Standard Mode</a></li>
+<li><a href="run-mode/cli-mode.html">Command Line Mode</a></li>
+<li><a href="run-mode/webapp-mode.html">Web Application Mode</a></li>
+<li><a href="base-files.html">Basic Files</a></li>
+<li><a href="project-docs.html">Project Documents</a></li>
+<li><a href="add-analysis.html">Add Analysis Code</a></li>
+<li><a href="i18n.html">Multi-language Support</a></li>
+<li><a href="normal-pages.html">Add Non-Document Pages</a></li>
+<li><a href="add-footer.html">Add Footer Content</a></li>
+<li><a href="use-component.html">Use Components</a></li>
 <li><a href="../index.html">English-index.html</a></li>
 <li><a href="../../cn/index.html">简体中文-index.html</a></li>
 <li><a href="../../t-cn/index.html">繁体中文-index.html</a></li>
 
 </ul></div>
-    <script src="https://cdn.jsdelivr.net/npm/obook@2.1.16/statics/init.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/obook@2.1.23/statics/init.js" type="module"></script>
   </body>
 </html>
