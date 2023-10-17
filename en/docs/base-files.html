@@ -9,7 +9,7 @@
       src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.25/libs/scsr/scsr.mjs"
       type="module"
     ></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/obook@2.1.29/statics/css/public.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/obook@2.1.30/statics/css/public.css" />
     <style>
       html,
       body {
@@ -35,9 +35,9 @@
       
   </head>
   <body>
-    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.29/statics/comps/doc-container.html"></l-m>
-    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.29/statics/comps/doc-header/doc-header.html"></l-m>
-    <o-app src="https://cdn.jsdelivr.net/npm/obook@2.1.29/statics/app-config.mjs">
+    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.30/statics/comps/doc-container.html"></l-m>
+    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.30/statics/comps/doc-header/doc-header.html"></l-m>
+    <o-app src="https://cdn.jsdelivr.net/npm/obook@2.1.30/statics/app-config.mjs">
       <template page>
         <style>
           .markdown-body::before,
@@ -52,19 +52,19 @@
         </style>
         <link
           rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/obook@2.1.29/statics/css/github-markdown.css"
+          href="https://cdn.jsdelivr.net/npm/obook@2.1.30/statics/css/github-markdown.css"
         />
         <article class="markdown-body"><h1>Basic Files</h1>
 <p>The basic files are equivalent to the scaffold for <code>o-book</code>, which is necessary to preview and build the project. They are indirectly related to your Markdown website, and the packaged files will not include these basic files. If you are not a developer or do not care about the details of the scaffold, you can skip this chapter and go directly to <a href="./project-docs.html">project files</a>.</p>
 <p><code>o-book</code> has two main foundational files: <code>sw.js</code> and <code>_preview.html</code>.</p>
 <h3>sw.js</h3>
 <pre><code class="language-javascript">// sw.js
-importScripts(`https://cdn.jsdelivr.net/npm/obook@2.1.29/src/sw/base.js`);
+importScripts(`https://cdn.jsdelivr.net/npm/obook@2.1.30/src/sw/base.js`);
 </code></pre>
 <h3>_preview.html</h3>
 <p><code>_preview.html</code> is the file that initializes the project preview. The main code is as follows:</p>
 <pre><code class="language-html">&lt;!-- Loaded the book-tool component using l-m --&gt;
-&lt;l-m src=&quot;https://cdn.jsdelivr.net/npm/obook@2.1.29/src/book-tool.html&quot;&gt;&lt;/l-m&gt;
+&lt;l-m src=&quot;https://cdn.jsdelivr.net/npm/obook@2.1.30/src/book-tool.html&quot;&gt;&lt;/l-m&gt;
 &lt;!-- Referenced the sw.js file mentioned above using the sw attribute. If the name of sw.js changes, it should be updated here as well --&gt;
 &lt;book-tool sw=&quot;./sw.js&quot;&gt;
     &lt;!-- References to your project configuration files --&gt;
@@ -84,9 +84,9 @@ importScripts(`https://cdn.jsdelivr.net/npm/obook@2.1.29/src/sw/base.js`);
     <article-footer></article-footer>
     </article>
         <script>
-          export const parent = "https://cdn.jsdelivr.net/npm/obook@2.1.29/statics/layouts/article-layout.html";
+          export const parent = "https://cdn.jsdelivr.net/npm/obook@2.1.30/statics/layouts/article-layout.html";
 
-          import pageInit from "https://cdn.jsdelivr.net/npm/obook@2.1.29/statics/document-page-init.mjs";
+          import pageInit from "https://cdn.jsdelivr.net/npm/obook@2.1.30/statics/document-page-init.mjs";
 
           export default async (...args) => {
             return await pageInit(PATH, args);
@@ -109,10 +109,10 @@ importScripts(`https://cdn.jsdelivr.net/npm/obook@2.1.29/src/sw/base.js`);
 <li><a href="use-component.html">Use components</a></li>
 <li><a href="set-description.html">Set description</a></li>
 <li><a href="../index.html">English-index.html</a></li>
-<li><a href="../../cn/index.html">简体中文-index.html</a></li>
 <li><a href="../../t-cn/index.html">繁体中文-index.html</a></li>
+<li><a href="../../cn/index.html">简体中文-index.html</a></li>
 
 </ul></div>
-    <script src="https://cdn.jsdelivr.net/npm/obook@2.1.29/statics/init.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/obook@2.1.30/statics/init.js" type="module"></script>
   </body>
 </html>
