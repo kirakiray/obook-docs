@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Web Application Patterns</title>
+    <title>设置页面描述</title>
         <script src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.25/dist/ofa.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.25/libs/scsr/scsr.mjs"
@@ -17,7 +17,7 @@
       }
     </style>
     <script>
-      let configUrl = "../../config.json";
+      let configUrl = "../config.json";
     </script>
     
         <!-- Google tag (gtag.js) -->
@@ -54,18 +54,20 @@
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/obook@2.1.29/statics/css/github-markdown.css"
         />
-        <article class="markdown-body"><h1>Web Application Patterns</h1>
-<p>This method is the lowest cost way to use obook, and the following are the steps to use it:</p>
-<ol>
-<li><p>Use the latest version of the Chrome browser (or other browsers that support File Access API) and open <a href="https://kirakiray.github.io/o-book/webapp/">obook webapp</a></p>
-</li>
-<li><p>Click on the &quot;Choose Local Folder&quot; button on the webpage to open your local project folder;</p>
-</li>
-</ol>
-<p>Now, you can click on the link to preview,</p>
-<h2>How to package</h2>
-<p>The steps are the same as above. Click the &quot;Download Website&quot; button on the page to download the packaged document site.</p>
-<p>This method is very convenient and suitable for users who do not require complex settings and development knowledge.</p>
+        <article class="markdown-body"><h1>设置页面描述</h1>
+<p>为了优化搜索引擎排名，需要设置网页的描述文本。您可以通过在 Markdown 文件中添加 <strong>desc</strong> 注释来为生成的页面设置描述属性，如下所示：</p>
+<pre><code class="language-markdown">&lt;!--desc: 在这里输入当前页面的描述文本--&gt;
+</code></pre>
+<p>一旦添加了上述注释，最终生成的页面将包含在目标 HTML 文件的头部中，如下所示：</p>
+<pre><code class="language-html">...
+&lt;head&gt;
+...
+  &lt;meta name=&quot;description&quot; content=&quot;在这里输入当前页面的描述文本&quot;&gt;
+...
+&lt;/head&gt;
+...
+</code></pre>
+<p>通过这种方式，您可以为您的页面提供有关其内容的相关描述，从而有助于搜索引擎了解页面的内容，提高搜索引擎优化效果。</p>
 
     <article-footer></article-footer>
     </article>
@@ -82,21 +84,21 @@
     </o-app>
     <div id="loading"></div>
     <div class="body-important other-link"><ul>
-<li><a href="../index.html">Introduction</a></li>
-<li><a href="base-mode.html">Standard mode</a></li>
-<li><a href="cli-mode.html">Command line mode</a></li>
-<li><a href="webapp-mode.html">Web application mode</a></li>
-<li><a href="../base-files.html">Base files</a></li>
-<li><a href="../project-docs.html">Project files</a></li>
-<li><a href="../add-analysis.html">Add analysis code</a></li>
-<li><a href="../i18n.html">Multi-language support</a></li>
-<li><a href="../normal-pages.html">Add non-document pages</a></li>
-<li><a href="../add-footer.html">Add footer content</a></li>
-<li><a href="../use-component.html">Use components</a></li>
-<li><a href="../set-description.html">Set description</a></li>
-<li><a href="../../index.html">English-index.html</a></li>
-<li><a href="../../../cn/index.html">简体中文-index.html</a></li>
-<li><a href="../../../t-cn/index.html">繁体中文-index.html</a></li>
+<li><a href="index.html">介绍</a></li>
+<li><a href="run-mode/base-mode.html">标准模式</a></li>
+<li><a href="run-mode/cli-mode.html">命令行模式</a></li>
+<li><a href="run-mode/webapp-mode.html">网页应用模式</a></li>
+<li><a href="base-files.html">基础文件</a></li>
+<li><a href="project-docs.html">项目文件</a></li>
+<li><a href="add-analysis.html">添加分析代码</a></li>
+<li><a href="i18n.html">多语言支持</a></li>
+<li><a href="normal-pages.html">添加非文档页面</a></li>
+<li><a href="add-footer.html">添加底部内容</a></li>
+<li><a href="use-component.html">使用组件</a></li>
+<li><a href="set-description.html">设置description</a></li>
+<li><a href="../../en/index.html">English-index.html</a></li>
+<li><a href="../index.html">简体中文-index.html</a></li>
+<li><a href="../../t-cn/index.html">繁体中文-index.html</a></li>
 
 </ul></div>
     <script src="https://cdn.jsdelivr.net/npm/obook@2.1.29/statics/init.js" type="module"></script>

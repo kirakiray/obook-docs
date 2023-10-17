@@ -56,6 +56,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://obook.ofajs.com/en/docs/set-description.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://obook.ofajs.com/en/index.html</loc>
     <changefreq>weekly</changefreq>
     <priority>1</priority>
@@ -116,6 +121,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://obook.ofajs.com/cn/docs/set-description.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://obook.ofajs.com/cn/index.html</loc>
     <changefreq>weekly</changefreq>
     <priority>1</priority>
@@ -172,6 +182,11 @@
   </url>
   <url>
     <loc>https://obook.ofajs.com/t-cn/docs/use-component.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://obook.ofajs.com/t-cn/docs/set-description.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
