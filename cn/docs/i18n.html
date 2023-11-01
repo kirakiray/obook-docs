@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>多语言支持</title>
-        <script src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.25/dist/ofa.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.30/dist/ofa.min.js"></script>
     <script
-      src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.25/libs/scsr/scsr.mjs"
+      src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.30/libs/scsr/scsr.mjs"
       type="module"
     ></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/obook@2.1.30/statics/css/public.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/obook@2.1.40/statics/css/public.css" />
     <style>
       html,
       body {
@@ -20,7 +20,6 @@
       let configUrl = "../config.json";
     </script>
     
-        <!-- Google tag (gtag.js) -->
         <link rel="shortcut icon" href="/favicon.png">
         <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-8YBSTGPGF8"></script>
         <script>
@@ -35,9 +34,9 @@
       
   </head>
   <body>
-    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.30/statics/comps/doc-container.html"></l-m>
-    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.30/statics/comps/doc-header/doc-header.html"></l-m>
-    <o-app src="https://cdn.jsdelivr.net/npm/obook@2.1.30/statics/app-config.mjs">
+    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.40/statics/comps/doc-container.html"></l-m>
+    <l-m src="https://cdn.jsdelivr.net/npm/obook@2.1.40/statics/comps/doc-header/doc-header.html"></l-m>
+    <o-app src="https://cdn.jsdelivr.net/npm/obook@2.1.40/statics/app-config.mjs">
       <template page>
         <style>
           .markdown-body::before,
@@ -49,10 +48,14 @@
           .markdown-body::after {
             height: 32px;
           }
+          .markdown-body > * {
+            margin-top: 1em;
+            margin-bottom: 1em;
+          }
         </style>
         <link
           rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/obook@2.1.30/statics/css/github-markdown.css"
+          href="https://cdn.jsdelivr.net/npm/obook@2.1.40/statics/css/github-markdown.css"
         />
         <article class="markdown-body"><h1>多语言支持</h1>
 <p>您可以通过修改 <code>_preview.html</code> 文件中的 <code>book-tool</code> 组件，在内部添加 <code>source</code> 标签来增加其他语言的文档。请注意，其他语言的文档必须要与原文内容一一对应。</p>
@@ -70,15 +73,17 @@
 <li>简体中文 (cn)</li>
 <li>繁体中文 (t-cn)</li>
 <li>西班牙语 (es)</li>
+<li>日语 (ja)</li>
+<li>韩语 (ko)</li>
 </ul>
 <p>通过这种方式，您可以轻松为不同语言的用户提供相应语言版本的网站内容；</p>
 
     <article-footer></article-footer>
     </article>
         <script>
-          export const parent = "https://cdn.jsdelivr.net/npm/obook@2.1.30/statics/layouts/article-layout.html";
+          export const parent = "https://cdn.jsdelivr.net/npm/obook@2.1.40/statics/layouts/article-layout.html";
 
-          import pageInit from "https://cdn.jsdelivr.net/npm/obook@2.1.30/statics/document-page-init.mjs";
+          import pageInit from "https://cdn.jsdelivr.net/npm/obook@2.1.40/statics/document-page-init.mjs";
 
           export default async (...args) => {
             return await pageInit(PATH, args);
@@ -99,12 +104,13 @@
 <li><a href="normal-pages.html">添加非文档页面</a></li>
 <li><a href="add-footer.html">添加底部内容</a></li>
 <li><a href="use-component.html">使用组件</a></li>
+<li><a href="obook-comps.html">官方组件</a></li>
 <li><a href="set-description.html">设置description</a></li>
 <li><a href="../../en/index.html">English-index.html</a></li>
-<li><a href="../../t-cn/index.html">繁体中文-index.html</a></li>
 <li><a href="../index.html">简体中文-index.html</a></li>
+<li><a href="../../t-cn/index.html">繁体中文-index.html</a></li>
 
 </ul></div>
-    <script src="https://cdn.jsdelivr.net/npm/obook@2.1.30/statics/init.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/obook@2.1.40/statics/init.js" type="module"></script>
   </body>
 </html>

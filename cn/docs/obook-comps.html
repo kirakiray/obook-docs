@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>添加分析代码</title>
+    <title>官方组件</title>
         <script src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.30/dist/ofa.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.30/libs/scsr/scsr.mjs"
@@ -57,31 +57,30 @@
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/obook@2.1.40/statics/css/github-markdown.css"
         />
-        <article class="markdown-body"><h1>添加分析代码</h1>
-<p>如果您需要跟踪和统计您网站的访问数据，我们建议您使用 <a href="https://analytics.google.com">谷歌分析</a>。</p>
-<p>要添加分析代码，请按照以下步骤操作：</p>
-<ol>
-<li><p>使用您的代码编辑器打开 <code>_preview.html</code> 文件。</p>
-</li>
-<li><p>在 <code>&lt;book-tool&gt;</code> 标签中添加一个带有 <code>inject-head</code> 属性的 <code>&lt;template&gt;</code> 标签，并将您的统计代码放置在模板内，类似如下所示：</p>
-</li>
-</ol>
-<pre><code class="language-html">&lt;book-tool sw=&quot;./doc-sw.js&quot;&gt;
-   &lt;source src=&quot;./cn/config.json&quot; lang=&quot;cn&quot; /&gt;
-   &lt;template inject-head&gt;
-        &lt;!-- Google tag (gtag.js) --&gt;
-        &lt;script async src=&quot;https://www.googletagmanager.com/gtag/js?id=G-xxxxxxxxxx&quot;&gt;&lt;/script&gt;
-        &lt;script&gt;
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag(&#39;js&#39;, new Date());
-
-        gtag(&#39;config&#39;, &#39;G-xxxxxxxxxx&#39;);
-        &lt;/script&gt;
-   &lt;/template&gt;
-&lt;/book-tool&gt;
+        <article class="markdown-body"><h1>官方组件</h1>
+<p>obook 官方还提供了许多可直接使用的组件，方便您在文档中进行展示。</p>
+<h2>files-viewer</h2>
+<p>这个组件用于展示多个文件，可以预览其中的一个HTML页面。在组件中，<code>main</code>属性的<code>&lt;a&gt;</code>标签代表首先选中的文件，而<code>previewer</code>代表要预览的HTML文件。您可以参考<a href="https://github.com/kirakiray/ofa-v4-docs/edit/main/docs/en/index.md">ofa.js官网源代码</a>中的使用示例：</p>
+<pre><code class="language-html">&lt;files-viewer style=&quot;width:100%&quot;&gt;
+    &lt;a href=&quot;../footer.html&quot; preview&gt;&lt;/a&gt;
+    &lt;a href=&quot;../en/config.json&quot; main&gt;&lt;/a&gt;
+    &lt;a href=&quot;../publics/logo.svg&quot;&gt;&lt;/a&gt;
+&lt;/files-viewer&gt;
 </code></pre>
-<p>一旦您添加了分析代码，请重新打包项目。分析代码会插入到所有页面的头部，以便您可以轻松跟踪和分析您网站的访问数据。</p>
+<h2>html-viewer</h2>
+<p>此组件用于预览HTML代码，您可以在其中放置多个代码块，最终预览效果是所有代码块按顺序拼接在一起。您可以参考<a href="https://github.com/kirakiray/ofa-v4-docs/edit/main/docs/en/index.md">ofa.js官网源代码</a>中的使用示例：</p>
+<pre><code class="language-html">&lt;html-viewer&gt;
+   &lt;!-- HTML代码块 --&gt;
+   ...
+&lt;/html-viewer&gt;
+</code></pre>
+<h2>comp-viewer</h2>
+<p>这是一个专门用于预览ofa.js组件的组件。您可以在其中指定组件名称（<code>comp-name</code>），然后插入组件代码块。您可以参考<a href="https://github.com/kirakiray/ofa-v4-docs/edit/main/docs/en/index.md">ofa.js官网源代码</a>中的使用示例：</p>
+<pre><code class="language-html">&lt;comp-viewer comp-name=&quot;component-name&quot;&gt;
+   &lt;!-- 组件代码块 --&gt;
+   ...
+&lt;/comp-viewer&gt;
+</code></pre>
 
     <article-footer></article-footer>
     </article>

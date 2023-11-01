@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Add analysis code</title>
+    <title>Official Components</title>
         <script src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.30/dist/ofa.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.30/libs/scsr/scsr.mjs"
@@ -57,31 +57,30 @@
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/obook@2.1.40/statics/css/github-markdown.css"
         />
-        <article class="markdown-body"><h1>Add analysis code</h1>
-<p>If you need to track and analyze the visitor data of your website, we recommend using <a href="https://analytics.google.com">Google Analytics</a>.</p>
-<p>To add analytics code, please follow these steps:</p>
-<ol>
-<li><p>Open the <code>_preview.html</code> file with your code editor.</p>
-</li>
-<li><p>Add a <code>&lt;template&gt;</code> tag with the <code>inject-head</code> attribute inside the <code>&lt;book-tool&gt;</code> tag, and place your tracking code within the template, similar to the following example:</p>
-</li>
-</ol>
-<pre><code class="language-html">&lt;book-tool sw=&quot;./doc-sw.js&quot;&gt;
-   &lt;source src=&quot;./cn/config.json&quot; lang=&quot;cn&quot; /&gt;
-   &lt;template inject-head&gt;
-        &lt;!-- Google tag (gtag.js) --&gt;
-        &lt;script async src=&quot;https://www.googletagmanager.com/gtag/js?id=G-xxxxxxxxxx&quot;&gt;&lt;/script&gt;
-        &lt;script&gt;
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag(&#39;js&#39;, new Date());
-
-        gtag(&#39;config&#39;, &#39;G-xxxxxxxxxx&#39;);
-        &lt;/script&gt;
-   &lt;/template&gt;
-&lt;/book-tool&gt;
+        <article class="markdown-body"><h1>Official Components</h1>
+<p>The official obook also provides many ready-to-use components, making it easy for you to present them in your document.</p>
+<h2>files-viewer</h2>
+<p>This component is used to display multiple files and preview one HTML page among them. In the component, the <code>&lt;a&gt;</code> tag of the <code>main</code> property represents the initially selected file, while <code>previewer</code> represents the HTML file to be previewed. You can refer to the usage example in the <a href="https://github.com/kirakiray/ofa-v4-docs/edit/main/docs/en/index.md">ofa.js official website source code</a>:</p>
+<pre><code class="language-html">&lt;files-viewer style=&quot;width:100%&quot;&gt;
+    &lt;a href=&quot;../footer.html&quot; preview&gt;&lt;/a&gt;
+    &lt;a href=&quot;../en/config.json&quot; main&gt;&lt;/a&gt;
+    &lt;a href=&quot;../publics/logo.svg&quot;&gt;&lt;/a&gt;
+&lt;/files-viewer&gt;
 </code></pre>
-<p>Once you have added the analytical code, please repackage the project. The analytical code will be inserted into the header of all pages, allowing you to easily track and analyze the traffic data of your website.</p>
+<h2>html-viewer</h2>
+<p>This component is used to preview HTML code. You can place multiple code blocks in it, and the final preview effect is that all code blocks are concatenated in order. You can refer to the usage example in the <a href="https://github.com/kirakiray/ofa-v4-docs/edit/main/docs/en/index.md">ofa.js official website source code</a>:</p>
+<pre><code class="language-html">&lt;html-viewer&gt;
+   &lt;!-- HTML code block --&gt;
+   ...
+&lt;/html-viewer&gt;
+</code></pre>
+<h2>comp-viewer</h2>
+<p>This is a component specifically designed for previewing ofa.js components. You can specify the component name (<code>comp-name</code>) and insert a component code block. You can refer to the usage examples in the <a href="https://github.com/kirakiray/ofa-v4-docs/edit/main/docs/en/index.md">ofa.js official website source code</a>.</p>
+<pre><code class="language-html">&lt;comp-viewer comp-name=&quot;component-name&quot;&gt;
+   &lt;!-- Component code block --&gt;
+   ...
+&lt;/comp-viewer&gt;
+</code></pre>
 
     <article-footer></article-footer>
     </article>

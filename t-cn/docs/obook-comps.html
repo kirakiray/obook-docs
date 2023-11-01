@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>添加分析代码</title>
+    <title>官方組件</title>
         <script src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.30/dist/ofa.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/gh/kirakiray/ofa.js@4.3.30/libs/scsr/scsr.mjs"
@@ -57,31 +57,30 @@
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/obook@2.1.40/statics/css/github-markdown.css"
         />
-        <article class="markdown-body"><h1>添加分析代码</h1>
-<p>如果您需要跟踪和统计您网站的访问数据，我们建议您使用 <a href="https://analytics.google.com">谷歌分析</a>。</p>
-<p>要添加分析代码，请按照以下步骤操作：</p>
-<ol>
-<li><p>使用您的代码编辑器打开 <code>_preview.html</code> 文件。</p>
-</li>
-<li><p>在 <code>&lt;book-tool&gt;</code> 标签中添加一个带有 <code>inject-head</code> 属性的 <code>&lt;template&gt;</code> 标签，并将您的统计代码放置在模板内，类似如下所示：</p>
-</li>
-</ol>
-<pre><code class="language-html">&lt;book-tool sw=&quot;./doc-sw.js&quot;&gt;
-   &lt;source src=&quot;./cn/config.json&quot; lang=&quot;cn&quot; /&gt;
-   &lt;template inject-head&gt;
-        &lt;!-- Google tag (gtag.js) --&gt;
-        &lt;script async src=&quot;https://www.googletagmanager.com/gtag/js?id=G-xxxxxxxxxx&quot;&gt;&lt;/script&gt;
-        &lt;script&gt;
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag(&#39;js&#39;, new Date());
-
-        gtag(&#39;config&#39;, &#39;G-xxxxxxxxxx&#39;);
-        &lt;/script&gt;
-   &lt;/template&gt;
-&lt;/book-tool&gt;
+        <article class="markdown-body"><h1>官方組件</h1>
+<p>obook 官方還提供了許多可直接使用的組件，方便您在文檔中進行展示。</p>
+<h2>files-viewer</h2>
+<p>這個組件用於展示多個文件，可以預覽其中的一個HTML頁面。在組件中，<code>main</code>屬性的<code>&lt;a&gt;</code>標簽代表首先選中的文件，而<code>previewer</code>代表要預覽的HTML文件。您可以參考<a href="https://github.com/kirakiray/ofa-v4-docs/edit/main/docs/en/index.md">ofa.js官網源代碼</a>中的使用示例：</p>
+<pre><code class="language-html">&lt;files-viewer style=&quot;width:100%&quot;&gt;
+    &lt;a href=&quot;../footer.html&quot; preview&gt;&lt;/a&gt;
+    &lt;a href=&quot;../en/config.json&quot; main&gt;&lt;/a&gt;
+    &lt;a href=&quot;../publics/logo.svg&quot;&gt;&lt;/a&gt;
+&lt;/files-viewer&gt;
 </code></pre>
-<p>一旦您添加了分析代码，请重新打包项目。分析代码会插入到所有页面的头部，以便您可以轻松跟踪和分析您网站的访问数据。</p>
+<h2>html-viewer</h2>
+<p>此組件用於預覽HTML代碼，您可以在其中放置多個代碼塊，最終預覽效果是所有代碼塊按順序拼接在一起。您可以參考<a href="https://github.com/kirakiray/ofa-v4-docs/edit/main/docs/en/index.md">ofa.js官網源代碼</a>中的使用示例：</p>
+<pre><code class="language-html">&lt;html-viewer&gt;
+   &lt;!-- HTML代碼塊 --&gt;
+   ...
+&lt;/html-viewer&gt;
+</code></pre>
+<h2>comp-viewer</h2>
+<p>這是一個專門用於預覽ofa.js組件的組件。您可以在其中指定組件名稱（<code>comp-name</code>），然後插入組件代碼塊。您可以參考<a href="https://github.com/kirakiray/ofa-v4-docs/edit/main/docs/en/index.md">ofa.js官網源代碼</a>中的使用示例：</p>
+<pre><code class="language-html">&lt;comp-viewer comp-name=&quot;component-name&quot;&gt;
+   &lt;!-- 組件代碼塊 --&gt;
+   ...
+&lt;/comp-viewer&gt;
+</code></pre>
 
     <article-footer></article-footer>
     </article>
@@ -98,22 +97,22 @@
     </o-app>
     <div id="loading"></div>
     <div class="body-important other-link"><ul>
-<li><a href="index.html">介绍</a></li>
-<li><a href="run-mode/base-mode.html">标准模式</a></li>
+<li><a href="index.html">介紹</a></li>
+<li><a href="run-mode/base-mode.html">標準模式</a></li>
 <li><a href="run-mode/cli-mode.html">命令行模式</a></li>
-<li><a href="run-mode/webapp-mode.html">网页应用模式</a></li>
-<li><a href="base-files.html">基础文件</a></li>
-<li><a href="project-docs.html">项目文件</a></li>
-<li><a href="add-analysis.html">添加分析代码</a></li>
-<li><a href="i18n.html">多语言支持</a></li>
-<li><a href="normal-pages.html">添加非文档页面</a></li>
-<li><a href="add-footer.html">添加底部内容</a></li>
-<li><a href="use-component.html">使用组件</a></li>
-<li><a href="obook-comps.html">官方组件</a></li>
-<li><a href="set-description.html">设置description</a></li>
+<li><a href="run-mode/webapp-mode.html">網頁應用模式</a></li>
+<li><a href="base-files.html">基礎文件</a></li>
+<li><a href="project-docs.html">項目文件</a></li>
+<li><a href="add-analysis.html">添加分析代碼</a></li>
+<li><a href="i18n.html">多語言支持</a></li>
+<li><a href="normal-pages.html">添加非文檔頁面</a></li>
+<li><a href="add-footer.html">添加底部內容</a></li>
+<li><a href="use-component.html">使用組件</a></li>
+<li><a href="obook-comps.html">官方組件</a></li>
+<li><a href="set-description.html">設置description</a></li>
 <li><a href="../../en/index.html">English-index.html</a></li>
-<li><a href="../index.html">简体中文-index.html</a></li>
-<li><a href="../../t-cn/index.html">繁体中文-index.html</a></li>
+<li><a href="../../cn/index.html">简体中文-index.html</a></li>
+<li><a href="../index.html">繁体中文-index.html</a></li>
 
 </ul></div>
     <script src="https://cdn.jsdelivr.net/npm/obook@2.1.40/statics/init.js" type="module"></script>
